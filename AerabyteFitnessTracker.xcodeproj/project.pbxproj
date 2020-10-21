@@ -34,8 +34,6 @@
 		05C5097825403A330069E1AE /* AerabyteFitnessWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096F25403A330069E1AE /* AerabyteFitnessWatch.swift */; };
 		05C5097925403A330069E1AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5097025403A330069E1AE /* ContentView.swift */; };
 		05C5097A25403A330069E1AE /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5097125403A330069E1AE /* WorkoutView.swift */; };
-		05C5098325403F880069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5098225403F880069E1AE /* HealthKitManager.swift */; };
-		05C5098425403F880069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5098225403F880069E1AE /* HealthKitManager.swift */; };
 		5F6C4257252EE39800C35FE1 /* StatsManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C4256252EE39800C35FE1 /* StatsManger.swift */; };
 		5F6C425E252EE41300C35FE1 /* EquivalentStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6C425D252EE41300C35FE1 /* EquivalentStatsManager.swift */; };
 		5F6C4266252EE9CC00C35FE1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */; };
@@ -117,7 +115,6 @@
 		05C5096F25403A330069E1AE /* AerabyteFitnessWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AerabyteFitnessWatch.swift; sourceTree = "<group>"; };
 		05C5097025403A330069E1AE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		05C5097125403A330069E1AE /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		05C5098225403F880069E1AE /* HealthKitManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		05E0321CF04F18DEC67D6238 /* Pods-AerabyteFitnessTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerabyteFitnessTracker.release.xcconfig"; path = "Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker.release.xcconfig"; sourceTree = "<group>"; };
 		5F6C4256252EE39800C35FE1 /* StatsManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsManger.swift; sourceTree = "<group>"; };
 		5F6C425D252EE41300C35FE1 /* EquivalentStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquivalentStatsManager.swift; sourceTree = "<group>"; };
@@ -246,7 +243,6 @@
 		05C5098125403F6B0069E1AE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				05C5098225403F880069E1AE /* HealthKitManager.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -467,7 +463,6 @@
 			files = (
 				053D5E5C252C1D4100C3432F /* ViewController.swift in Sources */,
 				5F6C425E252EE41300C35FE1 /* EquivalentStatsManager.swift in Sources */,
-				05C5098325403F880069E1AE /* HealthKitManager.swift in Sources */,
 				053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */,
 				05BD3531252EF2AF00E37F42 /* DetailsViewController.swift in Sources */,
 				055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */,
@@ -492,7 +487,6 @@
 				05C5097425403A330069E1AE /* MenuButton.swift in Sources */,
 				05C5097525403A330069E1AE /* RunButton.swift in Sources */,
 				05C5097825403A330069E1AE /* AerabyteFitnessWatch.swift in Sources */,
-				05C5098425403F880069E1AE /* HealthKitManager.swift in Sources */,
 				05C5097725403A330069E1AE /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
