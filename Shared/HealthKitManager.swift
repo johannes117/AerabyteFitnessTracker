@@ -13,6 +13,7 @@ protocol HeartRateDelegate {
 }
 
 class HealthKitManager: NSObject {
+    
     static let sharedInstance = HealthKitManager()
     
     private override init() {}
@@ -22,6 +23,8 @@ class HealthKitManager: NSObject {
     var anchor: HKQueryAnchor?
     
     var heartRateDelegate: HeartRateDelegate?
+    
+  
     
     func authorizeHealthKit(_ completion: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {
         
@@ -37,33 +40,41 @@ class HealthKitManager: NSObject {
         }
     }
     
-    func createHeartRateStreamingQuery(_ workoutStartDate: Date) -> HKQuery? {
-        
-        guard let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .heartRate) else {
-            return nil
-        }
+  
+   
 
-        let datePredicate = HKQuery.predicateForSamples(withStart: workoutStartDate, end: nil, options: .strictEndDate)
-        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate])
-        
-        let heartRateQuery = HKAnchoredObjectQuery(type: heartRateType, predicate: compoundPredicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) in
-            
-            guard let newAnchor = newAnchor,
-                let sampleObjects = sampleObjects else {
-                    return
+    
+    class func loadPrancerciseWorkouts(completion:
+        @escaping ([HKWorkout]?, Error?) -> Void) {
+      //1. Get all workouts with the "Other" activity type.
+      let workoutPredicate = HKQuery.predicateForWorkouts(with: .other)
+      
+      //2. Get all workouts that only came from this app.
+       
+      
+      let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
+                                            ascending: true)
+      
+      let query = HKSampleQuery(
+        sampleType: .workoutType(),
+        predicate: workoutPredicate,
+        limit: 0,
+        sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+          DispatchQueue.main.async {
+            //4. Cast the samples as HKWorkout
+            guard
+              let samples = samples as? [HKWorkout],
+              error == nil
+              else {
+                completion(nil, error)
+              return
             }
-            self.anchor = newAnchor
-            self.heartRateDelegate?.heartRateUpdated(heartRateSamples: sampleObjects)
-        }
-        heartRateQuery.updateHandler = {(query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
-
-            guard let newAnchor = newAnchor,
-                let sampleObjects = sampleObjects else {
-                    return
-            }
-            self.anchor = newAnchor
-            self.heartRateDelegate?.heartRateUpdated(heartRateSamples: sampleObjects)
-        }
-        return heartRateQuery
+                                    
+            completion(samples, nil)
+          }
+      }
+      
+      HKHealthStore().execute(query)
     }
+   
 }
