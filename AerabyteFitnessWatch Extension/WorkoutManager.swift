@@ -80,7 +80,7 @@ class WorkoutManager: NSObject, ObservableObject {
     func workoutConfiguration() -> HKWorkoutConfiguration {
         /// - Tag: WorkoutConfiguration
         let configuration = HKWorkoutConfiguration()
-        configuration.activityType = .other
+        configuration.activityType = .running
         configuration.locationType = .outdoor
         
         return configuration

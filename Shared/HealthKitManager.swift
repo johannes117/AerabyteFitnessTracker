@@ -42,7 +42,7 @@ class HealthKitManager: NSObject {
     class func loadWorkouts(completion:
         @escaping ([HKWorkout]?, Error?) -> Void) {
       //1. Get all workouts with the "Other" activity type.
-      let workoutPredicate = HKQuery.predicateForWorkouts(with: .other)
+      let workoutPredicate = HKQuery.predicateForWorkouts(with: .running)
       
 
       let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
