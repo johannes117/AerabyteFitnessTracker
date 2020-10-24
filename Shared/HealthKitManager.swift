@@ -24,7 +24,6 @@ class HealthKitManager: NSObject {
     
     var heartRateDelegate: HeartRateDelegate?
     
-  
     
     func authorizeHealthKit(_ completion: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {
         
@@ -40,18 +39,12 @@ class HealthKitManager: NSObject {
         }
     }
     
-  
-   
-
-    
-    class func loadPrancerciseWorkouts(completion:
+    class func loadWorkouts(completion:
         @escaping ([HKWorkout]?, Error?) -> Void) {
       //1. Get all workouts with the "Other" activity type.
       let workoutPredicate = HKQuery.predicateForWorkouts(with: .other)
       
-      //2. Get all workouts that only came from this app.
-       
-      
+
       let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
                                             ascending: true)
       

@@ -12,7 +12,7 @@ import Combine
 class WorkoutManager: NSObject, ObservableObject {
     
     /// - Tag: DeclareSessionBuilder
-    let healthStore = HKHealthStore()
+    let healthKitManager = HealthKitManager.sharedInstance
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
     
@@ -71,7 +71,7 @@ class WorkoutManager: NSObject, ObservableObject {
         ]
         
         // Request authorization for those quantity types.
-        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
+        healthKitManager.healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             // Handle error.
         }
     }
@@ -80,7 +80,7 @@ class WorkoutManager: NSObject, ObservableObject {
     func workoutConfiguration() -> HKWorkoutConfiguration {
         /// - Tag: WorkoutConfiguration
         let configuration = HKWorkoutConfiguration()
-        configuration.activityType = .running
+        configuration.activityType = .other
         configuration.locationType = .outdoor
         
         return configuration
@@ -95,7 +95,7 @@ class WorkoutManager: NSObject, ObservableObject {
         // Create the session and obtain the workout builder.
         /// - Tag: CreateWorkout
         do {
-            session = try HKWorkoutSession(healthStore: healthStore, configuration: self.workoutConfiguration())
+            session = try HKWorkoutSession(healthStore: healthKitManager.healthStore, configuration: self.workoutConfiguration())
             builder = session.associatedWorkoutBuilder()
         } catch {
             // Handle any exceptions.
@@ -108,7 +108,7 @@ class WorkoutManager: NSObject, ObservableObject {
         
         // Set the workout builder's data source.
         /// - Tag: SetDataSource
-        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore,
+        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthKitManager.healthStore,
                                                      workoutConfiguration: workoutConfiguration())
         
         // Start the workout session and begin data collection.

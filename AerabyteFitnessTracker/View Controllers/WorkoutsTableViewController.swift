@@ -58,7 +58,7 @@ class WorkoutsTableViewController: UITableViewController {
   }
   
   func reloadWorkouts() {
-    HealthKitManager.loadPrancerciseWorkouts { (workouts, error) in
+    HealthKitManager.loadWorkouts { (workouts, error) in
       self.workouts = workouts
       self.tableView.reloadData()
     }
