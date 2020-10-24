@@ -54,10 +54,8 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/AerabyteFitnessTracker">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "05C5093D2540399F0069E1AE"
@@ -65,7 +63,7 @@
             BlueprintName = "AerabyteFitnessWatch"
             ReferencedContainer = "container:AerabyteFitnessTracker.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,10 +71,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/AerabyteFitnessTracker">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "05C5093D2540399F0069E1AE"
@@ -84,16 +80,7 @@
             BlueprintName = "AerabyteFitnessWatch"
             ReferencedContainer = "container:AerabyteFitnessTracker.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05C5093D2540399F0069E1AE"
-            BuildableName = "AerabyteFitnessWatch.app"
-            BlueprintName = "AerabyteFitnessWatch"
-            ReferencedContainer = "container:AerabyteFitnessTracker.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -19,6 +19,16 @@
 		0520D9092542AE520066AF7A /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */; };
 		0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9062542AE510066AF7A /* ProfileViewController.swift */; };
 		0520D90B2542AE520066AF7A /* CreateWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9072542AE520066AF7A /* CreateWorkoutTableViewController.swift */; };
+		0520DB542543DF130066AF7A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4B2543DF130066AF7A /* StartView.swift */; };
+		0520DB552543DF130066AF7A /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4C2543DF130066AF7A /* PagingView.swift */; };
+		0520DB562543DF130066AF7A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4D2543DF130066AF7A /* MenuView.swift */; };
+		0520DB572543DF130066AF7A /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4E2543DF130066AF7A /* WorkoutManager.swift */; };
+		0520DB582543DF130066AF7A /* RunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4F2543DF130066AF7A /* RunButton.swift */; };
+		0520DB592543DF130066AF7A /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB502543DF130066AF7A /* MenuButton.swift */; };
+		0520DB5A2543DF130066AF7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB512543DF130066AF7A /* ContentView.swift */; };
+		0520DB5B2543DF130066AF7A /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB522543DF130066AF7A /* WorkoutView.swift */; };
+		0520DB5C2543DF130066AF7A /* SpeedySlothApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB532543DF130066AF7A /* SpeedySlothApp.swift */; };
+		0520DB622543DF790066AF7A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0520DB612543DF790066AF7A /* HealthKit.framework */; };
 		053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E57252C1D4100C3432F /* AppDelegate.swift */; };
 		053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E59252C1D4100C3432F /* SceneDelegate.swift */; };
 		053D5E5C252C1D4100C3432F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E5B252C1D4100C3432F /* ViewController.swift */; };
@@ -35,15 +45,6 @@
 		05C50953254039A20069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50952254039A20069E1AE /* Assets.xcassets */; };
 		05C50956254039A20069E1AE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50955254039A20069E1AE /* Preview Assets.xcassets */; };
 		05C5095A254039A20069E1AE /* AerabyteFitnessWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05C5093E2540399F0069E1AE /* AerabyteFitnessWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		05C5097225403A330069E1AE /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096925403A330069E1AE /* StartView.swift */; };
-		05C5097325403A330069E1AE /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096A25403A330069E1AE /* PagingView.swift */; };
-		05C5097425403A330069E1AE /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096B25403A330069E1AE /* MenuButton.swift */; };
-		05C5097525403A330069E1AE /* RunButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096C25403A330069E1AE /* RunButton.swift */; };
-		05C5097625403A330069E1AE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096D25403A330069E1AE /* MenuView.swift */; };
-		05C5097725403A330069E1AE /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096E25403A330069E1AE /* WorkoutManager.swift */; };
-		05C5097825403A330069E1AE /* AerabyteFitnessWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5096F25403A330069E1AE /* AerabyteFitnessWatch.swift */; };
-		05C5097925403A330069E1AE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5097025403A330069E1AE /* ContentView.swift */; };
-		05C5097A25403A330069E1AE /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C5097125403A330069E1AE /* WorkoutView.swift */; };
 		05C509BA2540F84A0069E1AE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509B92540F84A0069E1AE /* MenuViewController.swift */; };
 		05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
 		05C509C02541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
@@ -106,6 +107,17 @@
 		0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
 		0520D9062542AE510066AF7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0520D9072542AE520066AF7A /* CreateWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWorkoutTableViewController.swift; sourceTree = "<group>"; };
+		0520DB4B2543DF130066AF7A /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		0520DB4C2543DF130066AF7A /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		0520DB4D2543DF130066AF7A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		0520DB4E2543DF130066AF7A /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		0520DB4F2543DF130066AF7A /* RunButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunButton.swift; sourceTree = "<group>"; };
+		0520DB502543DF130066AF7A /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
+		0520DB512543DF130066AF7A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0520DB522543DF130066AF7A /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		0520DB532543DF130066AF7A /* SpeedySlothApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedySlothApp.swift; sourceTree = "<group>"; };
+		0520DB602543DF790066AF7A /* AerabyteFitnessWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AerabyteFitnessWatch Extension.entitlements"; sourceTree = "<group>"; };
+		0520DB612543DF790066AF7A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		053D5E54252C1D4100C3432F /* AerabyteFitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053D5E57252C1D4100C3432F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053D5E59252C1D4100C3432F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,15 +139,6 @@
 		05C50952254039A20069E1AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05C50955254039A20069E1AE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05C50957254039A20069E1AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05C5096925403A330069E1AE /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
-		05C5096A25403A330069E1AE /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
-		05C5096B25403A330069E1AE /* MenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
-		05C5096C25403A330069E1AE /* RunButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunButton.swift; sourceTree = "<group>"; };
-		05C5096D25403A330069E1AE /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
-		05C5096E25403A330069E1AE /* WorkoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
-		05C5096F25403A330069E1AE /* AerabyteFitnessWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AerabyteFitnessWatch.swift; sourceTree = "<group>"; };
-		05C5097025403A330069E1AE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		05C5097125403A330069E1AE /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		05C509B92540F84A0069E1AE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		05C509BE2541190E0069E1AE /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		05E0321CF04F18DEC67D6238 /* Pods-AerabyteFitnessTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerabyteFitnessTracker.release.xcconfig"; path = "Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0520DB622543DF790066AF7A /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,15 +283,16 @@
 		05C5094B254039A10069E1AE /* AerabyteFitnessWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				05C5097025403A330069E1AE /* ContentView.swift */,
-				05C5096B25403A330069E1AE /* MenuButton.swift */,
-				05C5096D25403A330069E1AE /* MenuView.swift */,
-				05C5096A25403A330069E1AE /* PagingView.swift */,
-				05C5096C25403A330069E1AE /* RunButton.swift */,
-				05C5096F25403A330069E1AE /* AerabyteFitnessWatch.swift */,
-				05C5096925403A330069E1AE /* StartView.swift */,
-				05C5096E25403A330069E1AE /* WorkoutManager.swift */,
-				05C5097125403A330069E1AE /* WorkoutView.swift */,
+				0520DB602543DF790066AF7A /* AerabyteFitnessWatch Extension.entitlements */,
+				0520DB512543DF130066AF7A /* ContentView.swift */,
+				0520DB502543DF130066AF7A /* MenuButton.swift */,
+				0520DB4D2543DF130066AF7A /* MenuView.swift */,
+				0520DB4C2543DF130066AF7A /* PagingView.swift */,
+				0520DB4F2543DF130066AF7A /* RunButton.swift */,
+				0520DB532543DF130066AF7A /* SpeedySlothApp.swift */,
+				0520DB4B2543DF130066AF7A /* StartView.swift */,
+				0520DB4E2543DF130066AF7A /* WorkoutManager.swift */,
+				0520DB522543DF130066AF7A /* WorkoutView.swift */,
 				05C50952254039A20069E1AE /* Assets.xcassets */,
 				05C50957254039A20069E1AE /* Info.plist */,
 				05C50954254039A20069E1AE /* Preview Content */,
@@ -332,6 +337,7 @@
 		9268C30F524852D09390C944 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0520DB612543DF790066AF7A /* HealthKit.framework */,
 				5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */,
 				BF44E4904DC2A985760C0EF5 /* Pods_AerabyteFitnessTracker.framework */,
 			);
@@ -544,16 +550,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05C5097625403A330069E1AE /* MenuView.swift in Sources */,
-				05C5097325403A330069E1AE /* PagingView.swift in Sources */,
-				05C5097925403A330069E1AE /* ContentView.swift in Sources */,
-				05C5097225403A330069E1AE /* StartView.swift in Sources */,
-				05C5097A25403A330069E1AE /* WorkoutView.swift in Sources */,
-				05C5097425403A330069E1AE /* MenuButton.swift in Sources */,
-				05C5097525403A330069E1AE /* RunButton.swift in Sources */,
-				05C5097825403A330069E1AE /* AerabyteFitnessWatch.swift in Sources */,
+				0520DB552543DF130066AF7A /* PagingView.swift in Sources */,
+				0520DB562543DF130066AF7A /* MenuView.swift in Sources */,
+				0520DB5A2543DF130066AF7A /* ContentView.swift in Sources */,
+				0520DB592543DF130066AF7A /* MenuButton.swift in Sources */,
+				0520DB5B2543DF130066AF7A /* WorkoutView.swift in Sources */,
+				0520DB572543DF130066AF7A /* WorkoutManager.swift in Sources */,
+				0520DB5C2543DF130066AF7A /* SpeedySlothApp.swift in Sources */,
+				0520DB582543DF130066AF7A /* RunButton.swift in Sources */,
 				05C509C02541190E0069E1AE /* HealthKitManager.swift in Sources */,
-				05C5097725403A330069E1AE /* WorkoutManager.swift in Sources */,
+				0520DB542543DF130066AF7A /* StartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -808,6 +814,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "AerabyteFitnessWatch Extension/AerabyteFitnessWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AerabyteFitnessWatch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = QV59DF4DXY;
@@ -834,6 +841,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "AerabyteFitnessWatch Extension/AerabyteFitnessWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"AerabyteFitnessWatch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = QV59DF4DXY;

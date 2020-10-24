@@ -8,7 +8,7 @@ This file defines the SpeedySloth app.
 import SwiftUI
 
 @main
-struct AerabyteFitnessWatch: App {
+struct SpeedySlothApp: App {
     // This is the business logic.
     var workoutManager = WorkoutManager()
 
@@ -23,7 +23,7 @@ struct AerabyteFitnessWatch: App {
     }
 }
 
-struct AerabyteFitnessWatch_Previews: PreviewProvider {
+struct SpeedySlothApp_Previews: PreviewProvider {
     static var previews: some View {
         /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
