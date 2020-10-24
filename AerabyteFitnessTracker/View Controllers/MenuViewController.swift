@@ -9,12 +9,17 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    @IBOutlet weak var AllTimeDashboard: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpElements()
         // Do any additional setup after loading the view.
+    }
+    func setUpElements(){
+        
+        //Style the elements
+        
+
     }
     
 

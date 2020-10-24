@@ -29,6 +29,7 @@
 		0520DB5B2543DF130066AF7A /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB522543DF130066AF7A /* WorkoutView.swift */; };
 		0520DB5C2543DF130066AF7A /* SpeedySlothApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB532543DF130066AF7A /* SpeedySlothApp.swift */; };
 		0520DB622543DF790066AF7A /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0520DB612543DF790066AF7A /* HealthKit.framework */; };
+		0520DB7B254408380066AF7A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB7A254408380066AF7A /* TabViewController.swift */; };
 		053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E57252C1D4100C3432F /* AppDelegate.swift */; };
 		053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E59252C1D4100C3432F /* SceneDelegate.swift */; };
 		053D5E5C252C1D4100C3432F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E5B252C1D4100C3432F /* ViewController.swift */; };
@@ -118,6 +119,7 @@
 		0520DB532543DF130066AF7A /* SpeedySlothApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeedySlothApp.swift; sourceTree = "<group>"; };
 		0520DB602543DF790066AF7A /* AerabyteFitnessWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AerabyteFitnessWatch Extension.entitlements"; sourceTree = "<group>"; };
 		0520DB612543DF790066AF7A /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
+		0520DB7A254408380066AF7A /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		053D5E54252C1D4100C3432F /* AerabyteFitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053D5E57252C1D4100C3432F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053D5E59252C1D4100C3432F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				0520D9042542AE510066AF7A /* MasterViewController.swift */,
 				0520D9062542AE510066AF7A /* ProfileViewController.swift */,
 				0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */,
+				0520DB7A254408380066AF7A /* TabViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */,
 				0520D8FA2542AE2C0066AF7A /* Workout.swift in Sources */,
 				0520D8E82542ADF60066AF7A /* WorkoutDataStore.swift in Sources */,
+				0520DB7B254408380066AF7A /* TabViewController.swift in Sources */,
 				055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */,
 				053D5E6D252C1D7E00C3432F /* SignUpViewController.swift in Sources */,
 				053D5E70252C1D9000C3432F /* LoginViewController.swift in Sources */,

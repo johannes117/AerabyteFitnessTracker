@@ -53,7 +53,7 @@ class WorkoutDataStore {
       let calorieQuantity = HKQuantity(unit: .kilocalorie(),
                                        doubleValue: interval.totalEnergyBurned)
       
-      return HKCumulativeQuantitySeriesSample(type: energyQuantityType,
+        return HKCumulativeQuantitySample(type: energyQuantityType,
                                                     quantity: calorieQuantity,
                                                     start: interval.start,
                                                     end: interval.end)
