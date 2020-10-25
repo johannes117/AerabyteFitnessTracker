@@ -21,7 +21,7 @@ struct WorkoutView: View {
                 .font(Font.system(size: 26, weight: .semibold, design: .default).monospacedDigit())
                 
             // The active calories burned.
-            Text("Score: ")
+            Text("Score:\(workoutSession.pushScore()) ")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             .frame(alignment: .leading)
             
