@@ -9,9 +9,7 @@ import SwiftUI
 
 struct WorkoutView: View {
     @EnvironmentObject var workoutSession: WorkoutManager
-    @EnvironmentObject var aerabyteCalc: WorkoutManager
-    @EnvironmentObject var aerabyteTotal: WorkoutManager
-    
+   
     
    
     var body: some View {
@@ -20,8 +18,8 @@ struct WorkoutView: View {
             Text("\(elapsedTimeString(elapsed: secondsToHoursMinutesSeconds(seconds: workoutSession.elapsedSeconds)))").frame(alignment: .leading)
                 .font(Font.system(size: 26, weight: .semibold, design: .default).monospacedDigit())
                 
-            // The active calories burned.
-            Text("Score:\(workoutSession.pushScore()) ")
+            // The Aerabyte Score.
+            Text("\(workoutSession.pushScore()) APS")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             .frame(alignment: .leading)
             

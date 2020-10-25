@@ -15,6 +15,7 @@ protocol AerabyteSessionDelegate {
     func aerabyteFunction()
 }
 
+
 class HealthKitManager: NSObject {
     
     static let sharedInstance = HealthKitManager()
@@ -28,6 +29,8 @@ class HealthKitManager: NSObject {
     var heartRateDelegate: HeartRateDelegate?
     
     var accumulatedAerabytes: Int = 0
+    
+   
     
     
     func authorizeHealthKit(_ completion: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {

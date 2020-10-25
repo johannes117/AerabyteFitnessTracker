@@ -44,9 +44,8 @@ class WorkoutManager: NSObject, ObservableObject {
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.aerabytes = self.aerabyteTotal() + self.aerabytes
-            print(self.aerabytes)
             }
         cancellable = Timer.publish(every: 0.1, on: .main, in: .default)
             .autoconnect()
@@ -237,11 +236,12 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         
     }
-    func pushScore() -> Double {
+    //adds aerabyte score to workoutSession method
+    func pushScore() -> Int {
         let aerabyteData = self.aerabytes
-        return Double(aerabyteData)
+        return Int(aerabyteData)
     }
-    func aerabyteCalc (heartRate: Double) -> Double {
+    func aerabyteCalc (heartRate: Double) -> Int {
           
     var aerabyteCount = healthKitManager.accumulatedAerabytes
        if heartRate <= 100 {
@@ -274,7 +274,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
        else if heartRate > 180 {
            aerabyteCount +=  10
        }
-           return Double(aerabyteCount)
+           return Int(aerabyteCount)
    }
     func aerabyteTotal() -> Int{
        let aerabyteScore: Int = Int((aerabyteCalc(heartRate: heartrate)))

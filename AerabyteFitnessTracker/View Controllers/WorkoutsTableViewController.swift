@@ -11,7 +11,6 @@ class WorkoutsTableViewController: UITableViewController {
     
     var heartRateQuery: HKQuery?
     
-    
   private enum WorkoutsSegues: String {
     case showCreateWorkout
     case finishedCreatingWorkout
@@ -26,8 +25,6 @@ class WorkoutsTableViewController: UITableViewController {
     formatter.dateStyle = .medium
     return formatter
   }()
-    
-
     
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -52,8 +49,6 @@ class WorkoutsTableViewController: UITableViewController {
     }
   }
 }
-
-
 
 extension WorkoutsTableViewController {
   override func tableView(_ tableView: UITableView,
