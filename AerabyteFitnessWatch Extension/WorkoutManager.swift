@@ -12,7 +12,7 @@ import Combine
 class WorkoutManager: NSObject, ObservableObject {
     
     /// - Tag: DeclareSessionBuilder
-    let healthStore = HKHealthStore()
+    let healthKitManager = HealthKitManager.sharedInstance
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
     
@@ -28,6 +28,7 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var distance: Double = 0
     @Published var elapsedSeconds: Int = 0
     
+    
     // The app's workout state.
     var running: Bool = false
     
@@ -36,6 +37,8 @@ class WorkoutManager: NSObject, ObservableObject {
     var start: Date = Date()
     var cancellable: Cancellable?
     var accumulatedTime: Int = 0
+
+    
     
     // Set up and start the timer.
     func setUpTimer() {
@@ -45,8 +48,20 @@ class WorkoutManager: NSObject, ObservableObject {
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.elapsedSeconds = self.incrementElapsedTime()
+                
             }
     }
+    
+   // func timerHandler(){
+        //Run Incremement Aerabytes Method every 60 sconds
+   //     if running == true {
+   //     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+   //         self.accumulatedAerabytes = self.incrementAerabytes()
+    //        print("Number: \(self.accumulatedAerabytes)")
+    //        }
+   //     }
+   // }
+
     
     // Calculate the elapsed time.
     func incrementElapsedTime() -> Int {
@@ -71,7 +86,7 @@ class WorkoutManager: NSObject, ObservableObject {
         ]
         
         // Request authorization for those quantity types.
-        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
+        healthKitManager.healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             // Handle error.
         }
     }
@@ -91,11 +106,10 @@ class WorkoutManager: NSObject, ObservableObject {
         // Start the timer.
         setUpTimer()
         self.running = true
-        
         // Create the session and obtain the workout builder.
         /// - Tag: CreateWorkout
         do {
-            session = try HKWorkoutSession(healthStore: healthStore, configuration: self.workoutConfiguration())
+            session = try HKWorkoutSession(healthStore: healthKitManager.healthStore, configuration: self.workoutConfiguration())
             builder = session.associatedWorkoutBuilder()
         } catch {
             // Handle any exceptions.
@@ -108,7 +122,7 @@ class WorkoutManager: NSObject, ObservableObject {
         
         // Set the workout builder's data source.
         /// - Tag: SetDataSource
-        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthStore,
+        builder.dataSource = HKLiveWorkoutDataSource(healthStore: healthKitManager.healthStore,
                                                      workoutConfiguration: workoutConfiguration())
         
         // Start the workout session and begin data collection.
@@ -116,6 +130,8 @@ class WorkoutManager: NSObject, ObservableObject {
         session.startActivity(with: Date())
         builder.beginCollection(withStart: Date()) { (success, error) in
             // The workout has started.
+            
+            
         }
     }
     
@@ -187,6 +203,7 @@ class WorkoutManager: NSObject, ObservableObject {
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.distance = roundedValue
                 return
+           
             default:
                 return
             }
@@ -214,7 +231,49 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         
     }
+    func aerabyteCalc (heartRate: Double) -> Double {
+          
+    var aerabyteCount = healthKitManager.accumulatedAerabytes
+       if heartRate <= 100 {
+           aerabyteCount += 0
+       }
+       else if heartRate >= 100 && heartRate < 110 {
+           aerabyteCount +=  1
+       }
+       else if heartRate >= 110 && heartRate < 120 {
+           aerabyteCount +=  2
+       }
+       else if heartRate >= 120 && heartRate < 130 {
+           aerabyteCount +=  3
+       }
+       else if heartRate >= 130 && heartRate < 140 {
+           aerabyteCount +=  4
+       }
+       else if heartRate >= 140 && heartRate < 150 {
+           aerabyteCount += 5
+       }
+       else if heartRate >= 150 && heartRate < 160 {
+           aerabyteCount +=  6
+       }
+       else if heartRate >= 160 && heartRate < 170 {
+           aerabyteCount +=  7
+       }
+       else if heartRate >= 170 && heartRate < 180 {
+           aerabyteCount +=  8
+       }
+       else if heartRate > 180 {
+           aerabyteCount +=  10
+       }
+       
+           return Double(aerabyteCount)
+       
+   }
+    func aerabyteTotal() -> Int{
+       let aerabyteScore: Int = Int((aerabyteCalc(heartRate: heartrate)))
+        return self.healthKitManager.accumulatedAerabytes + aerabyteScore
+   }
 }
+
 
 // MARK: - HKLiveWorkoutBuilderDelegate
 extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
@@ -230,9 +289,12 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             
             /// - Tag: GetStatistics
             let statistics = workoutBuilder.statistics(for: quantityType)
-            
             // Update the published values.
             updateForStatistics(statistics)
+            
         }
     }
 }
+
+
+

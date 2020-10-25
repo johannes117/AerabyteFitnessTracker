@@ -11,6 +11,9 @@ import HealthKit
 protocol HeartRateDelegate {
     func heartRateUpdated(heartRateSamples: [HKSample])
 }
+protocol AerabyteSessionDelegate {
+    func aerabyteFunction()
+}
 
 class HealthKitManager: NSObject {
     
@@ -23,6 +26,8 @@ class HealthKitManager: NSObject {
     var anchor: HKQueryAnchor?
     
     var heartRateDelegate: HeartRateDelegate?
+    
+    var accumulatedAerabytes: Int = 0
     
     
     func authorizeHealthKit(_ completion: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {
@@ -39,15 +44,49 @@ class HealthKitManager: NSObject {
         }
     }
     
+    func createHeartRateStreamingQuery(_ workoutStartDate: Date) -> HKQuery? {
+        
+        guard let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .heartRate) else {
+            return nil
+        }
+
+        let datePredicate = HKQuery.predicateForSamples(withStart: workoutStartDate, end: nil, options: .strictEndDate)
+        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [datePredicate])
+        
+        let heartRateQuery = HKAnchoredObjectQuery(type: heartRateType, predicate: compoundPredicate, anchor: nil, limit: Int(HKObjectQueryNoLimit)) { (query, sampleObjects, deletedObjects, newAnchor, error) in
+            
+            guard let newAnchor = newAnchor,
+                let sampleObjects = sampleObjects else {
+                    return
+            }
+            self.anchor = newAnchor
+            self.heartRateDelegate?.heartRateUpdated(heartRateSamples: sampleObjects)
+        }
+        heartRateQuery.updateHandler = {(query, sampleObjects, deletedObjects, newAnchor, error) -> Void in
+
+            guard let newAnchor = newAnchor,
+                let sampleObjects = sampleObjects else {
+                    return
+            }
+            self.anchor = newAnchor
+            self.heartRateDelegate?.heartRateUpdated(heartRateSamples: sampleObjects)
+        }
+        return heartRateQuery
+    }
+    
+    
+
+    
     class func loadWorkouts(completion:
         @escaping ([HKWorkout]?, Error?) -> Void) {
       //1. Get all workouts with the "Other" activity type.
       let workoutPredicate = HKQuery.predicateForWorkouts(with: .running)
-      
 
       let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate,
                                             ascending: true)
-      
+        
+       
+            
       let query = HKSampleQuery(
         sampleType: .workoutType(),
         predicate: workoutPredicate,
@@ -69,5 +108,7 @@ class HealthKitManager: NSObject {
       
       HKHealthStore().execute(query)
     }
+    
+    
    
 }

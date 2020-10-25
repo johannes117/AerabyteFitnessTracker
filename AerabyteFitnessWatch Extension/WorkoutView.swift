@@ -10,6 +10,8 @@ import SwiftUI
 struct WorkoutView: View {
     @EnvironmentObject var workoutSession: WorkoutManager
     
+    
+   
     var body: some View {
         VStack(alignment: .leading) {
             // The workout elapsed time.
@@ -17,7 +19,7 @@ struct WorkoutView: View {
                 .font(Font.system(size: 26, weight: .semibold, design: .default).monospacedDigit())
                 
             // The active calories burned.
-            Text("\(workoutSession.activeCalories, specifier: "%.1f") cal")
+            Text("Score:\(workoutSession.aerabyteTotal()) ")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             .frame(alignment: .leading)
             
@@ -43,6 +45,8 @@ struct WorkoutView: View {
     func elapsedTimeString(elapsed: (h: Int, m: Int, s: Int)) -> String {
         return String(format: "%d:%02d:%02d", elapsed.h, elapsed.m, elapsed.s)
     }
+
+
 }
 
 struct WorkoutView_Previews: PreviewProvider {
