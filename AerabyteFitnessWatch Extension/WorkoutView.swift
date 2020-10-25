@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WorkoutView: View {
     @EnvironmentObject var workoutSession: WorkoutManager
+    @EnvironmentObject var aerabyteCalc: WorkoutManager
+    @EnvironmentObject var aerabyteTotal: WorkoutManager
     
     
    
@@ -19,7 +21,7 @@ struct WorkoutView: View {
                 .font(Font.system(size: 26, weight: .semibold, design: .default).monospacedDigit())
                 
             // The active calories burned.
-            Text("Score:\(workoutSession.aerabyteTotal()) ")
+            Text("Score: ")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             .frame(alignment: .leading)
             

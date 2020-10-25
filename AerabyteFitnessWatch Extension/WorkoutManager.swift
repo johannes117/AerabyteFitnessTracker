@@ -27,6 +27,7 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var activeCalories: Double = 0
     @Published var distance: Double = 0
     @Published var elapsedSeconds: Int = 0
+    @Published var aerabytes: Int = 0
     
     
     // The app's workout state.
@@ -43,12 +44,15 @@ class WorkoutManager: NSObject, ObservableObject {
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.aerabytes = self.aerabyteTotal() + self.aerabytes
+            print(self.aerabytes)
+            }
         cancellable = Timer.publish(every: 0.1, on: .main, in: .default)
             .autoconnect()
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.elapsedSeconds = self.incrementElapsedTime()
-                
             }
     }
     
@@ -176,6 +180,7 @@ class WorkoutManager: NSObject, ObservableObject {
             self.activeCalories = 0
             self.heartrate = 0
             self.distance = 0
+            self.aerabytes = 0
         }
     }
     
@@ -203,12 +208,12 @@ class WorkoutManager: NSObject, ObservableObject {
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.distance = roundedValue
                 return
-           
             default:
                 return
             }
         }
     }
+   
 }
 
 // MARK: - HKWorkoutSessionDelegate
@@ -219,6 +224,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         /// - Tag: SaveWorkout
         if toState == .ended {
             print("The workout has now ended.")
+            
             builder.endCollection(withEnd: Date()) { (success, error) in
                 self.builder.finishWorkout { (workout, error) in
                     // Optionally display a workout summary to the user.
@@ -231,6 +237,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     func workoutSession(_ workoutSession: HKWorkoutSession, didFailWithError error: Error) {
         
     }
+    
     func aerabyteCalc (heartRate: Double) -> Double {
           
     var aerabyteCount = healthKitManager.accumulatedAerabytes
@@ -264,9 +271,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
        else if heartRate > 180 {
            aerabyteCount +=  10
        }
-       
            return Double(aerabyteCount)
-       
    }
     func aerabyteTotal() -> Int{
        let aerabyteScore: Int = Int((aerabyteCalc(heartRate: heartrate)))
@@ -286,7 +291,6 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             guard let quantityType = type as? HKQuantityType else {
                 return // Nothing to do.
             }
-            
             /// - Tag: GetStatistics
             let statistics = workoutBuilder.statistics(for: quantityType)
             // Update the published values.
