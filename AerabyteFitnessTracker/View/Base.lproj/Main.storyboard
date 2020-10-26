@@ -135,8 +135,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="wyX-ig-R2x" kind="relationship" relationship="viewControllers" id="Fia-x1-IH6"/>
-                        <segue destination="bzJ-Pt-KPJ" kind="relationship" relationship="viewControllers" id="Mmh-kF-dyz"/>
                         <segue destination="FSd-Wm-LN8" kind="relationship" relationship="viewControllers" id="hIg-Tw-SC3"/>
+                        <segue destination="x40-2y-mm7" kind="relationship" relationship="viewControllers" id="vZW-4n-nQH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOY-X6-3vN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -269,87 +269,12 @@
             </objects>
             <point key="canvasLocation" x="858" y="94"/>
         </scene>
-        <!--Main View Controller-->
-        <scene sceneID="kIJ-qK-57x">
-            <objects>
-                <tableViewController title="Master" id="bzJ-Pt-KPJ" userLabel="Main View Controller" customClass="MasterViewController" customModule="AerabyteFitnessTracker" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="gHV-Ra-4Y1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
-                        <sections>
-                            <tableViewSection id="8nL-a6-yc9">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="3uJ-nJ-c2E" style="IBUITableViewCellStyleDefault" id="8ce-9v-iec">
-                                        <rect key="frame" x="0.0" y="10" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8ce-9v-iec" id="v4H-50-j3w">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Profile and BMI" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3uJ-nJ-c2E">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" systemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <segue destination="x40-2y-mm7" kind="show" id="Rki-2k-pcu"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="62b-HN-Ag2">
-                                <cells/>
-                            </tableViewSection>
-                            <tableViewSection id="IkZ-51-3lc">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Yv8-O9-T3N" style="IBUITableViewCellStyleDefault" id="au4-go-Q8d">
-                                        <rect key="frame" x="0.0" y="94" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="au4-go-Q8d" id="aa4-ZO-XAv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Authorize HealthKit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yv8-O9-T3N">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="tintColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="bzJ-Pt-KPJ" id="ZUS-uc-Uea"/>
-                            <outlet property="delegate" destination="bzJ-Pt-KPJ" id="ekK-9c-0rK"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Workout Manager" image="flame.fill" catalog="system" id="BjB-ki-vQB"/>
-                    <navigationItem key="navigationItem" title="Prancercise Tracker" id="kRT-wz-Spd">
-                        <barButtonItem key="backBarButtonItem" title=" " id="MZq-bT-fmN"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dXO-JD-gsV" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4367" y="185"/>
-        </scene>
         <!--Profile & BMI-->
         <scene sceneID="JR6-GK-Wqc">
             <objects>
                 <tableViewController title="Profile &amp; BMI" id="x40-2y-mm7" customClass="ProfileViewController" customModule="AerabyteFitnessTracker" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5EX-4B-72B">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -553,6 +478,7 @@
                             <outlet property="delegate" destination="x40-2y-mm7" id="Q6Q-ni-N28"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Profile " image="person" catalog="system" id="gik-Gy-ANm"/>
                     <navigationItem key="navigationItem" id="lXq-p1-OwP"/>
                     <connections>
                         <outlet property="ageLabel" destination="nyb-TG-96G" id="oue-a9-Ll8"/>
@@ -565,7 +491,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9C-fB-4oG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5204" y="185"/>
+            <point key="canvasLocation" x="4367" y="185"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="41k-g9-WbH">
@@ -624,9 +550,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flame.fill" catalog="system" width="108" height="128"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -650,12 +576,6 @@
         </systemColor>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="darkTextColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

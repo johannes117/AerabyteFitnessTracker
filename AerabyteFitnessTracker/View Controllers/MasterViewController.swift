@@ -12,6 +12,7 @@ class MasterViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if indexPath.section == authorizeHealthKitSection {
         healthKitManager.requestAuthorization()
+        
     }
   }
 }

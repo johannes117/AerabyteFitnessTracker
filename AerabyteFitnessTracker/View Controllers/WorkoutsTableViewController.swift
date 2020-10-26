@@ -79,16 +79,6 @@ extension WorkoutsTableViewController {
     else {
       cell.detailTextLabel?.text = nil
     }
-    if let aerabyteEarned =
-        workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) {
-      let formattedCalories = String(format: "CaloriesBurned: %.2f",
-                                     aerabyteEarned)
-      
-      cell.detailTextLabel?.text = formattedCalories
-    }
-    else {
-      cell.detailTextLabel?.text = nil
-    }
    
     
     return cell

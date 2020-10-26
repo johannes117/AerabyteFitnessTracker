@@ -165,10 +165,6 @@ class WorkoutManager: NSObject, ObservableObject {
                 let value = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.heartrate = roundedValue
-            case HKQuantityType.quantityType(forIdentifier: .init(rawValue: self.pushString())):
-                /// - Tag: SetLabel
-                let aerabyteUnit = self.pushString()
-                self.aerabytes = Int(aerabyteUnit) ?? 0
             case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
                 let energyUnit = HKUnit.kilocalorie()
                 let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
@@ -216,13 +212,8 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         let aerabyteData = self.aerabytes
         return Int(aerabyteData)
     }
-    func pushString() -> String {
-        let aerabyteData = self.aerabytes
-        print(aerabyteData)
-        return String(aerabyteData)
-    }
+
     func aerabyteCalc (heartRate: Double) -> Int {
-          
     var aerabyteCount = accumulatedAerabytes
        if heartRate <= 100 {
            aerabyteCount += 0

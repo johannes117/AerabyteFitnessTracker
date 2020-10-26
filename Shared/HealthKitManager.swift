@@ -18,25 +18,6 @@ class HealthKitManager: NSObject {
     
     var anchor: HKQueryAnchor?
     
- 
-    
-    func authorizeHealthKit(_ completion: @escaping ((_ success: Bool, _ error: Error?) -> Void)) {
-        
-        guard let heartRateType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .heartRate) else {
-            return
-        }
-        guard let energyburnedType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned) else {
-            return
-        }
-        let typesToShare = Set([HKObjectType.workoutType(), heartRateType, energyburnedType])
-        let typesToRead = Set([HKObjectType.workoutType(), heartRateType, energyburnedType, HKObjectType.activitySummaryType()])
-        
-        healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-            print("Was authorization successful? \(success)")
-            completion(success, error)
-        }
-    }
-    
     // Request authorization to access HealthKit.
     func requestAuthorization() {
         // Requesting authorization.
@@ -53,34 +34,44 @@ class HealthKitManager: NSObject {
         let typesToRead: Set = [
             HKQuantityType.quantityType(forIdentifier: .heartRate)!,
             HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
+            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!,
+           
         ]
+        guard
+          let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
+          let bloodType = HKObjectType.characteristicType(forIdentifier: .bloodType),
+          let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
+          let bodyMassIndex = HKObjectType.quantityType(forIdentifier: .bodyMassIndex),
+          let height = HKObjectType.quantityType(forIdentifier: .height),
+          let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass),
+          let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned),
+          let heartRate = HKObjectType.quantityType(forIdentifier: .heartRate)
+          else {
+            
+            return
+        }
+        //3. Prepare a list of types you want HealthKit to read and write
+        let healthKitTypesToWrite: Set<HKSampleType> = [bodyMassIndex,
+                                                        activeEnergy,
+                                                        heartRate,
+                                                        HKObjectType.workoutType()]
+        let healthKitTypesToRead: Set<HKObjectType> = [dateOfBirth,
+                                                       bloodType,
+                                                       biologicalSex,
+                                                       bodyMassIndex,
+                                                       height,
+                                                       bodyMass,
+                                                       heartRate,
+                                                       HKObjectType.workoutType()]
         // Request authorization for those quantity types.
+        HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite,
+                                             read: healthKitTypesToRead) { (success, error) in
+                                              
+        }
         healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
             // Handle error.
         }
     }
-    
- //   private class func samples(for workout: AerabyteWorkout) -> [HKSample] {
-      //1. Verify that the energy quantity type is still available to HealthKit.
-   //   guard let energyQuantityType = HKSampleType.quantityType(
-     //   forIdentifier: .activeEnergyBurned) else {
-      //      fatalError("*** Energy Burned Type Not Available ***")
-    //  }
-      
-      //2. Create a sample for each AerabyteWorkoutInterval
-   //   let samples: [HKSample] = workout.intervals.map { interval in
-    //    let calorieQuantity = HKQuantity(unit: .kilocalorie(),
-       //                                  doubleValue: interval.totalEnergyBurned)
-        
-      //    return HKCumulativeQuantitySample(type: energyQuantityType,
-      //                                                quantity: calorieQuantity,
-       //                                               start: interval.start,
-      //                                                end: interval.end)
-    //  }
-      
-   //   return samples
-  //  }
     
     class func loadWorkouts(completion:
         @escaping ([HKWorkout]?, Error?) -> Void) {
@@ -108,7 +99,6 @@ class HealthKitManager: NSObject {
             completion(samples, nil)
           }
       }
-      
       HKHealthStore().execute(query)
     }
     
@@ -139,7 +129,6 @@ class HealthKitManager: NSObject {
           completion(false, HealthkitSetupError.dataTypeNotAvailable)
           return
       }
-      
       //3. Prepare a list of types you want HealthKit to read and write
       let healthKitTypesToWrite: Set<HKSampleType> = [bodyMassIndex,
                                                       activeEnergy,

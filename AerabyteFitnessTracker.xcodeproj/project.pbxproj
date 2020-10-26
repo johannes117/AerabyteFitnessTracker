@@ -125,6 +125,7 @@
 		055EEBFB252C275A0031B4F1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		055EEC00252C2DE70031B4F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		055EEC27252D92660031B4F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		057FFD7D25466A0000C1DB2F /* AerabyteFitnessWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerabyteFitnessWatch.entitlements; sourceTree = "<group>"; };
 		05BD3533252EFBC400E37F42 /* AerabyteFitnessTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerabyteFitnessTracker.entitlements; sourceTree = "<group>"; };
 		05C5093E2540399F0069E1AE /* AerabyteFitnessWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C50940254039A10069E1AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 		05C5093F2540399F0069E1AE /* AerabyteFitnessWatch */ = {
 			isa = PBXGroup;
 			children = (
+				057FFD7D25466A0000C1DB2F /* AerabyteFitnessWatch.entitlements */,
 				05C50940254039A10069E1AE /* Assets.xcassets */,
 				05C50942254039A10069E1AE /* Info.plist */,
 			);
@@ -743,6 +745,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AerabyteFitnessWatch/AerabyteFitnessWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QV59DF4DXY;
 				IBSC_MODULE = AerabyteFitnessWatch_Extension;
@@ -770,6 +773,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AerabyteFitnessWatch/AerabyteFitnessWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QV59DF4DXY;
 				IBSC_MODULE = AerabyteFitnessWatch_Extension;
