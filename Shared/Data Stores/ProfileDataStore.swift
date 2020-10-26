@@ -34,6 +34,7 @@ class ProfileDataStore: NSObject {
       return (age, unwrappedBiologicalSex, unwrappedBloodType)
     }
   }
+   
   
   class func getMostRecentSample(for sampleType: HKSampleType,
                                  completion: @escaping (HKQuantitySample?, Error?) -> Swift.Void) {

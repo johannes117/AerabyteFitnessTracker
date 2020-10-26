@@ -18,6 +18,7 @@ class WorkoutManager: NSObject, ObservableObject {
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
     
+    
     // Publish the following:
     // - heartrate
     // - active calories
@@ -42,6 +43,27 @@ class WorkoutManager: NSObject, ObservableObject {
     var cancellable: Cancellable?
     var accumulatedTime: Int = 0
     var accumulatedAerabytes: Int = 0
+    var age: Int = 0
+    
+    private let userHealthProfile = UserHealthProfile()
+    
+  
+    
+    
+    private func loadAndDisplayAgeSexAndBloodType() {
+      do {
+        let userAgeSexAndBloodType = try ProfileDataStore.getAgeSexAndBloodType()
+        userHealthProfile.age = userAgeSexAndBloodType.age
+        userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
+        userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
+      } catch let error {
+        //
+      }
+    }
+    
+    
+    
+    
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
@@ -75,6 +97,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // Start the workout.
     func startWorkout() {
         // Start the timer.
+        loadAndDisplayAgeSexAndBloodType()
         setUpTimer()
         self.running = true
         // Create the session and obtain the workout builder.
@@ -105,7 +128,7 @@ class WorkoutManager: NSObject, ObservableObject {
             
         }
     }
-    
+     
     
     // MARK: - State Control
     func togglePause() {
@@ -209,40 +232,44 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
     //adds aerabyte score to workoutSession method
     func pushScore() -> Int {
-        let aerabyteData = self.aerabytes
+        let aerabyteData = (self.aerabytes)/60
         return Int(aerabyteData)
     }
-
+    
     func aerabyteCalc (heartRate: Double) -> Int {
+        
+        let maxHR: Double = 220
+        let realmaxHR = maxHR - Double(userHealthProfile.age ?? 20)
+        
     var aerabyteCount = accumulatedAerabytes
-       if heartRate <= 100 {
-           aerabyteCount += 0
+        if heartRate < realmaxHR*0.5 {
+           aerabyteCount += 1
        }
-       else if heartRate >= 100 && heartRate < 110 {
-           aerabyteCount +=  1
-       }
-       else if heartRate >= 110 && heartRate < 120 {
+       else if heartRate >= realmaxHR*0.5 && heartRate < realmaxHR*0.55 {
            aerabyteCount +=  2
        }
-       else if heartRate >= 120 && heartRate < 130 {
+       else if heartRate >= realmaxHR*0.55 && heartRate < realmaxHR*0.6 {
            aerabyteCount +=  3
        }
-       else if heartRate >= 130 && heartRate < 140 {
+       else if heartRate >= realmaxHR*0.6 && heartRate < realmaxHR*0.65 {
            aerabyteCount +=  4
        }
-       else if heartRate >= 140 && heartRate < 150 {
-           aerabyteCount += 5
+       else if heartRate >= realmaxHR*0.65 && heartRate < realmaxHR*0.7 {
+           aerabyteCount +=  5
        }
-       else if heartRate >= 150 && heartRate < 160 {
-           aerabyteCount +=  6
+       else if heartRate >= realmaxHR*0.7 && heartRate < realmaxHR*0.75 {
+           aerabyteCount += 6
        }
-       else if heartRate >= 160 && heartRate < 170 {
+       else if heartRate >= realmaxHR*0.75 && heartRate < realmaxHR*0.8 {
            aerabyteCount +=  7
        }
-       else if heartRate >= 170 && heartRate < 180 {
+       else if heartRate >= realmaxHR*0.8 && heartRate < realmaxHR*0.85 {
            aerabyteCount +=  8
        }
-       else if heartRate > 180 {
+       else if heartRate >= realmaxHR*0.85 && heartRate < realmaxHR*0.9 {
+           aerabyteCount +=  9
+       }
+       else if heartRate >= realmaxHR*0.9 {
            aerabyteCount +=  10
        }
            return Int(aerabyteCount)

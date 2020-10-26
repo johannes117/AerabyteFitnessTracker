@@ -151,8 +151,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Aerabyte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-Z5-PxZ">
-                                <rect key="frame" x="125.5" y="437.5" width="163" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2MF-xX-DVb">
+                                <rect key="frame" x="118.5" y="348" width="177" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Aerabytes Today: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnC-NP-8Be">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="S12-pZ-c5w"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R3-EK-wTG">
+                                        <rect key="frame" x="0.0" y="50" width="177" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9qH-x4-DpX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vS-de-VgC">
+                                        <rect key="frame" x="0.0" y="100" width="177" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="R8e-F0-jg1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26th of October 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOZ-tr-R1D">
+                                        <rect key="frame" x="0.0" y="150" width="177" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="wtD-mu-Opi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-Q2-jz6">
+                                <rect key="frame" x="40" y="723" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sNZ-Ss-HNk"/>
+                                </constraints>
+                                <state key="normal" title="Launch Watch App"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Aerabyte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-Z5-PxZ">
+                                <rect key="frame" x="40" y="84" width="334" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aze-OB-yOj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -161,12 +212,21 @@
                         <viewLayoutGuide key="safeArea" id="bMS-9n-2Ir"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="centerX" secondItem="pcA-2y-ZVc" secondAttribute="centerX" id="BVV-9W-hvc"/>
-                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="centerY" secondItem="pcA-2y-ZVc" secondAttribute="centerY" id="wad-bn-49i"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="bottom" secondItem="QdI-Q2-jz6" secondAttribute="bottom" constant="40" id="7ID-Tm-oFd"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="gjR-Z5-PxZ" secondAttribute="trailing" constant="40" id="Mry-2y-33r"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="QdI-Q2-jz6" secondAttribute="trailing" constant="40" id="Mxj-26-umt"/>
+                            <constraint firstItem="2MF-xX-DVb" firstAttribute="centerX" secondItem="pcA-2y-ZVc" secondAttribute="centerX" id="O1e-bQ-cjc"/>
+                            <constraint firstItem="QdI-Q2-jz6" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="40" id="RIA-69-9MS"/>
+                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="40" id="RjF-lC-ouW"/>
+                            <constraint firstItem="2MF-xX-DVb" firstAttribute="centerY" secondItem="pcA-2y-ZVc" secondAttribute="centerY" id="mhf-ew-S7Q"/>
+                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="top" secondItem="bMS-9n-2Ir" secondAttribute="top" constant="40" id="xsY-fc-jNH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="JWE-yH-PoI"/>
                     <navigationItem key="navigationItem" id="b3b-J2-Pvg"/>
+                    <connections>
+                        <outlet property="startWorkoutButton" destination="QdI-Q2-jz6" id="V04-h1-AmF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-Ds-bJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
