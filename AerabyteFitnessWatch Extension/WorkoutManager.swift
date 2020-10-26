@@ -8,6 +8,7 @@ This file contains the business logic, which is the interface to HealthKit.
 import Foundation
 import HealthKit
 import Combine
+import CoreData
 
 class WorkoutManager: NSObject, ObservableObject {
     
@@ -17,6 +18,9 @@ class WorkoutManager: NSObject, ObservableObject {
     /// - Tag: DeclareSessionBuilder
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
+    var people: [NSManagedObject] = []
+
+ 
     
     
     // Publish the following:
