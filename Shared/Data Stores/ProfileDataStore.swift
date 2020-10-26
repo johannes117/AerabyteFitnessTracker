@@ -6,7 +6,8 @@
 
 import HealthKit
 
-class ProfileDataStore {
+class ProfileDataStore: NSObject {
+    static let sharedInstance = ProfileDataStore()
   class func getAgeSexAndBloodType() throws -> (age: Int,
                                                 biologicalSex: HKBiologicalSex,
                                                 bloodType: HKBloodType) {

@@ -5,19 +5,17 @@ import HealthKit
 
 class WorkoutsTableViewController: UITableViewController {
     
-    let healthKitManager = HealthKitManager.sharedInstance
-    
-    var datasource: [HKQuantitySample] = []
-    
-    var heartRateQuery: HKQuery?
-    
+    let healthKitManager = HealthKitManager.sharedInstance;
+    let profileDataStore = ProfileDataStore.sharedInstance;
+
+
   private enum WorkoutsSegues: String {
     case showCreateWorkout
     case finishedCreatingWorkout
   }
   
   private var workouts: [HKWorkout]?
-  private let prancerciseWorkoutCellID = "PrancerciseWorkoutCell"
+  private let aerabyteWorkoutCellID = "AerabyteWorkoutCell"
   
   lazy var dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -37,12 +35,7 @@ class WorkoutsTableViewController: UITableViewController {
     reloadWorkouts()
   }
   
-  func reloadWorkouts() {
-    if let query = healthKitManager.createHeartRateStreamingQuery(Date()){
-        self.heartRateQuery = query
-        self.healthKitManager.heartRateDelegate = self
-        self.healthKitManager.healthStore.execute(query)
-    }
+  func reloadWorkouts() { 
     HealthKitManager.loadWorkouts { (workouts, error) in
       self.workouts = workouts
       self.tableView.reloadData()
@@ -55,9 +48,7 @@ extension WorkoutsTableViewController {
                           numberOfRowsInSection section: Int) -> Int {
     return workouts?.count ?? 0
   }
-  
-    
-    
+      
   override func tableView(_ tableView: UITableView,
                           cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let workouts = workouts else {
@@ -67,27 +58,31 @@ extension WorkoutsTableViewController {
                """)
     }
     
-    
     //1. Get a cell to display the workout in
     let cell = tableView.dequeueReusableCell(withIdentifier:
-      prancerciseWorkoutCellID, for: indexPath)
+      aerabyteWorkoutCellID, for: indexPath)
     
     //2. Get the workout corresponding to this row
     let workout = workouts[indexPath.row]
     
     //3. Show the workout's start date in the label
     cell.textLabel?.text = dateFormatter.string(from: workout.startDate)
-    //let heartRate = String(format: "Heart Rate: %.1f",
-                          // hear)
-    
-    //cell.detailTextLabel?.text = heartRate
-    
-   
+ 
     //4. Show the Calorie burn in the lower label
     if let caloriesBurned =
         workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) {
       let formattedCalories = String(format: "CaloriesBurned: %.2f",
                                      caloriesBurned)
+      
+      cell.detailTextLabel?.text = formattedCalories
+    }
+    else {
+      cell.detailTextLabel?.text = nil
+    }
+    if let aerabyteEarned =
+        workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) {
+      let formattedCalories = String(format: "CaloriesBurned: %.2f",
+                                     aerabyteEarned)
       
       cell.detailTextLabel?.text = formattedCalories
     }
@@ -100,18 +95,3 @@ extension WorkoutsTableViewController {
   }
 }
 
-extension WorkoutsTableViewController: HeartRateDelegate {
-    
-    func heartRateUpdated(heartRateSamples: [HKSample]) {
-        
-        guard let heartRateSamples = heartRateSamples as? [HKQuantitySample] else {
-            return
-        }
-        
-        DispatchQueue.main.async {
-            
-            self.datasource.append(contentsOf: heartRateSamples)
-            self.tableView.reloadData()
-        }
-    }
-}

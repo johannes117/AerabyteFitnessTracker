@@ -11,6 +11,9 @@ import Combine
 struct StartView: View {
     
     @EnvironmentObject var workoutSession: WorkoutManager
+    let healthKitManager = HealthKitManager.sharedInstance
+    let profileDataStore = ProfileDataStore.sharedInstance
+    
     
     let startAction: (() -> Void)? // The start action callback.
     
@@ -19,7 +22,7 @@ struct StartView: View {
             self.startAction!() // FixMe!
         }).onAppear() {
             // Request HealthKit store authorization.
-            self.workoutSession.requestAuthorization()
+            self.workoutSession.healthKitManager.requestAuthorization()
         }
     }
 }

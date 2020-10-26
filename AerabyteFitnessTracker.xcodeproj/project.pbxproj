@@ -8,17 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0520D8E72542ADF60066AF7A /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8E52542ADF60066AF7A /* ProfileDataStore.swift */; };
-		0520D8E82542ADF60066AF7A /* WorkoutDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8E62542ADF60066AF7A /* WorkoutDataStore.swift */; };
 		0520D8EF2542AE150066AF7A /* HKBiologicalSex+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8ED2542AE150066AF7A /* HKBiologicalSex+StringRepresentation.swift */; };
 		0520D8F02542AE150066AF7A /* HKBloodType+StringRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8EE2542AE150066AF7A /* HKBloodType+StringRepresentation.swift */; };
-		0520D8F82542AE2C0066AF7A /* WorkoutSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8F52542AE2C0066AF7A /* WorkoutSession.swift */; };
 		0520D8F92542AE2C0066AF7A /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */; };
-		0520D8FA2542AE2C0066AF7A /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8F72542AE2C0066AF7A /* Workout.swift */; };
-		0520D9002542AE3E0066AF7A /* HealthKitSetupAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8FF2542AE3E0066AF7A /* HealthKitSetupAssistant.swift */; };
 		0520D9082542AE520066AF7A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9042542AE510066AF7A /* MasterViewController.swift */; };
 		0520D9092542AE520066AF7A /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */; };
 		0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9062542AE510066AF7A /* ProfileViewController.swift */; };
-		0520D90B2542AE520066AF7A /* CreateWorkoutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9072542AE520066AF7A /* CreateWorkoutTableViewController.swift */; };
 		0520DB542543DF130066AF7A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4B2543DF130066AF7A /* StartView.swift */; };
 		0520DB552543DF130066AF7A /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4C2543DF130066AF7A /* PagingView.swift */; };
 		0520DB562543DF130066AF7A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4D2543DF130066AF7A /* MenuView.swift */; };
@@ -41,6 +36,8 @@
 		055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EEBFB252C275A0031B4F1 /* Utilities.swift */; };
 		055EEC01252C2DE70031B4F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 055EEC00252C2DE70031B4F1 /* GoogleService-Info.plist */; };
 		055EEC28252D92660031B4F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EEC27252D92660031B4F1 /* Constants.swift */; };
+		057FFD5C254651D900C1DB2F /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */; };
+		057FFD662546546A00C1DB2F /* ProfileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8E52542ADF60066AF7A /* ProfileDataStore.swift */; };
 		05C50941254039A10069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50940254039A10069E1AE /* Assets.xcassets */; };
 		05C50948254039A10069E1AE /* AerabyteFitnessWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05C50947254039A10069E1AE /* AerabyteFitnessWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05C50953254039A20069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50952254039A20069E1AE /* Assets.xcassets */; };
@@ -97,17 +94,12 @@
 
 /* Begin PBXFileReference section */
 		0520D8E52542ADF60066AF7A /* ProfileDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileDataStore.swift; sourceTree = "<group>"; };
-		0520D8E62542ADF60066AF7A /* WorkoutDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDataStore.swift; sourceTree = "<group>"; };
 		0520D8ED2542AE150066AF7A /* HKBiologicalSex+StringRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HKBiologicalSex+StringRepresentation.swift"; sourceTree = "<group>"; };
 		0520D8EE2542AE150066AF7A /* HKBloodType+StringRepresentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HKBloodType+StringRepresentation.swift"; sourceTree = "<group>"; };
-		0520D8F52542AE2C0066AF7A /* WorkoutSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSession.swift; sourceTree = "<group>"; };
 		0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
-		0520D8F72542AE2C0066AF7A /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		0520D8FF2542AE3E0066AF7A /* HealthKitSetupAssistant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthKitSetupAssistant.swift; sourceTree = "<group>"; };
 		0520D9042542AE510066AF7A /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
 		0520D9062542AE510066AF7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0520D9072542AE520066AF7A /* CreateWorkoutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWorkoutTableViewController.swift; sourceTree = "<group>"; };
 		0520DB4B2543DF130066AF7A /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		0520DB4C2543DF130066AF7A /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		0520DB4D2543DF130066AF7A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -174,7 +166,6 @@
 			isa = PBXGroup;
 			children = (
 				0520D8E52542ADF60066AF7A /* ProfileDataStore.swift */,
-				0520D8E62542ADF60066AF7A /* WorkoutDataStore.swift */,
 			);
 			path = "Data Stores";
 			sourceTree = "<group>";
@@ -192,18 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */,
-				0520D8F72542AE2C0066AF7A /* Workout.swift */,
-				0520D8F52542AE2C0066AF7A /* WorkoutSession.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		0520D8FE2542AE320066AF7A /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				0520D8FF2542AE3E0066AF7A /* HealthKitSetupAssistant.swift */,
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		053D5E4B252C1D4100C3432F = {
@@ -232,10 +213,6 @@
 		053D5E56252C1D4100C3432F /* AerabyteFitnessTracker */ = {
 			isa = PBXGroup;
 			children = (
-				0520D8FE2542AE320066AF7A /* Other */,
-				0520D8F42542AE200066AF7A /* Models */,
-				0520D8EC2542ADFE0066AF7A /* HealthKitExtentions */,
-				0520D8E42542ADE60066AF7A /* Data Stores */,
 				05BD3533252EFBC400E37F42 /* AerabyteFitnessTracker.entitlements */,
 				053D5E57252C1D4100C3432F /* AppDelegate.swift */,
 				053D5E59252C1D4100C3432F /* SceneDelegate.swift */,
@@ -256,7 +233,6 @@
 				053D5E6F252C1D9000C3432F /* LoginViewController.swift */,
 				053D5E5B252C1D4100C3432F /* ViewController.swift */,
 				05C509B92540F84A0069E1AE /* MenuViewController.swift */,
-				0520D9072542AE520066AF7A /* CreateWorkoutTableViewController.swift */,
 				0520D9042542AE510066AF7A /* MasterViewController.swift */,
 				0520D9062542AE510066AF7A /* ProfileViewController.swift */,
 				0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */,
@@ -314,6 +290,9 @@
 		05C5098125403F6B0069E1AE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				0520D8E42542ADE60066AF7A /* Data Stores */,
+				0520D8EC2542ADFE0066AF7A /* HealthKitExtentions */,
+				0520D8F42542AE200066AF7A /* Models */,
 				05C509BE2541190E0069E1AE /* HealthKitManager.swift */,
 			);
 			path = Shared;
@@ -529,8 +508,6 @@
 				0520D8E72542ADF60066AF7A /* ProfileDataStore.swift in Sources */,
 				0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */,
 				053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */,
-				0520D8FA2542AE2C0066AF7A /* Workout.swift in Sources */,
-				0520D8E82542ADF60066AF7A /* WorkoutDataStore.swift in Sources */,
 				0520DB7B254408380066AF7A /* TabViewController.swift in Sources */,
 				055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */,
 				053D5E6D252C1D7E00C3432F /* SignUpViewController.swift in Sources */,
@@ -539,12 +516,9 @@
 				053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */,
 				05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */,
 				0520D9092542AE520066AF7A /* WorkoutsTableViewController.swift in Sources */,
-				0520D9002542AE3E0066AF7A /* HealthKitSetupAssistant.swift in Sources */,
 				0520D8F02542AE150066AF7A /* HKBloodType+StringRepresentation.swift in Sources */,
 				0520D8EF2542AE150066AF7A /* HKBiologicalSex+StringRepresentation.swift in Sources */,
 				0520D9082542AE520066AF7A /* MasterViewController.swift in Sources */,
-				0520D90B2542AE520066AF7A /* CreateWorkoutTableViewController.swift in Sources */,
-				0520D8F82542AE2C0066AF7A /* WorkoutSession.swift in Sources */,
 				055EEC28252D92660031B4F1 /* Constants.swift in Sources */,
 				0520D8F92542AE2C0066AF7A /* UserHealthProfile.swift in Sources */,
 			);
@@ -554,6 +528,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057FFD5C254651D900C1DB2F /* UserHealthProfile.swift in Sources */,
+				057FFD662546546A00C1DB2F /* ProfileDataStore.swift in Sources */,
 				0520DB552543DF130066AF7A /* PagingView.swift in Sources */,
 				0520DB562543DF130066AF7A /* MenuView.swift in Sources */,
 				0520DB5A2543DF130066AF7A /* ContentView.swift in Sources */,

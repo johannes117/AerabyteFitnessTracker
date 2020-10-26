@@ -11,8 +11,10 @@ import Combine
 
 class WorkoutManager: NSObject, ObservableObject {
     
-    /// - Tag: DeclareSessionBuilder
+    //Declare Shared Instances
     let healthKitManager = HealthKitManager.sharedInstance
+    let profileDataStore = ProfileDataStore.sharedInstance
+    /// - Tag: DeclareSessionBuilder
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
     
@@ -21,6 +23,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // - active calories
     // - distance moved
     // - elapsed time
+    // - aerabytes
     
     /// - Tag: Publishers
     @Published var heartrate: Double = 0
@@ -38,9 +41,7 @@ class WorkoutManager: NSObject, ObservableObject {
     var start: Date = Date()
     var cancellable: Cancellable?
     var accumulatedTime: Int = 0
-
-    
-    
+    var accumulatedAerabytes: Int = 0
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
@@ -55,43 +56,10 @@ class WorkoutManager: NSObject, ObservableObject {
             }
     }
     
-   // func timerHandler(){
-        //Run Incremement Aerabytes Method every 60 sconds
-   //     if running == true {
-   //     Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-   //         self.accumulatedAerabytes = self.incrementAerabytes()
-    //        print("Number: \(self.accumulatedAerabytes)")
-    //        }
-   //     }
-   // }
-
-    
     // Calculate the elapsed time.
     func incrementElapsedTime() -> Int {
         let runningTime: Int = Int(-1 * (self.start.timeIntervalSinceNow))
         return self.accumulatedTime + runningTime
-    }
-    
-    // Request authorization to access HealthKit.
-    func requestAuthorization() {
-        // Requesting authorization.
-        /// - Tag: RequestAuthorization
-        // The quantity type to write to the health store.
-        let typesToShare: Set = [
-            HKQuantityType.workoutType()
-        ]
-        
-        // The quantity types to read from the health store.
-        let typesToRead: Set = [
-            HKQuantityType.quantityType(forIdentifier: .heartRate)!,
-            HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned)!,
-            HKQuantityType.quantityType(forIdentifier: .distanceWalkingRunning)!
-        ]
-        
-        // Request authorization for those quantity types.
-        healthKitManager.healthStore.requestAuthorization(toShare: typesToShare, read: typesToRead) { (success, error) in
-            // Handle error.
-        }
     }
     
     // Provide the workout configuration.
@@ -137,6 +105,7 @@ class WorkoutManager: NSObject, ObservableObject {
             
         }
     }
+    
     
     // MARK: - State Control
     func togglePause() {
@@ -196,6 +165,10 @@ class WorkoutManager: NSObject, ObservableObject {
                 let value = statistics.mostRecentQuantity()?.doubleValue(for: heartRateUnit)
                 let roundedValue = Double( round( 1 * value! ) / 1 )
                 self.heartrate = roundedValue
+            case HKQuantityType.quantityType(forIdentifier: .init(rawValue: self.pushString())):
+                /// - Tag: SetLabel
+                let aerabyteUnit = self.pushString()
+                self.aerabytes = Int(aerabyteUnit) ?? 0
             case HKQuantityType.quantityType(forIdentifier: .activeEnergyBurned):
                 let energyUnit = HKUnit.kilocalorie()
                 let value = statistics.sumQuantity()?.doubleValue(for: energyUnit)
@@ -210,8 +183,10 @@ class WorkoutManager: NSObject, ObservableObject {
             default:
                 return
             }
+            
         }
     }
+    
    
 }
 
@@ -241,9 +216,14 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         let aerabyteData = self.aerabytes
         return Int(aerabyteData)
     }
+    func pushString() -> String {
+        let aerabyteData = self.aerabytes
+        print(aerabyteData)
+        return String(aerabyteData)
+    }
     func aerabyteCalc (heartRate: Double) -> Int {
           
-    var aerabyteCount = healthKitManager.accumulatedAerabytes
+    var aerabyteCount = accumulatedAerabytes
        if heartRate <= 100 {
            aerabyteCount += 0
        }
@@ -278,7 +258,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
    }
     func aerabyteTotal() -> Int{
        let aerabyteScore: Int = Int((aerabyteCalc(heartRate: heartrate)))
-        return self.healthKitManager.accumulatedAerabytes + aerabyteScore
+        return self.accumulatedAerabytes + aerabyteScore
    }
 }
 
@@ -296,12 +276,11 @@ extension WorkoutManager: HKLiveWorkoutBuilderDelegate {
             }
             /// - Tag: GetStatistics
             let statistics = workoutBuilder.statistics(for: quantityType)
+            
             // Update the published values.
             updateForStatistics(statistics)
             
         }
     }
 }
-
-
 
