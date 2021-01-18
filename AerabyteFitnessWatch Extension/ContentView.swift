@@ -40,7 +40,16 @@ struct ContentView_Previews: PreviewProvider {
         Group {
             ContentView()
             .previewDevice("Apple Watch Series 2 - 40mm")
-            .previewDisplayName("40 mm")
+                .previewDisplayName("40 mm")
+            ContentView()
+                .previewDevice("Apple Watch Series 2 - 40mm")
+                .previewDisplayName("40 mm")
+            ContentView()
+                .previewDevice("Apple Watch Series 2 - 40mm")
+                .previewDisplayName("40 mm")
+            ContentView()
+                .previewDevice("Apple Watch Series 2 - 40mm")
+                .previewDisplayName("40 mm")
             
             ContentView()
             .previewDevice("Apple Watch Series 2 - 44mm")

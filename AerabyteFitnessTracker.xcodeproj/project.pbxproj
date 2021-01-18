@@ -27,12 +27,9 @@
 		0520DB7B254408380066AF7A /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB7A254408380066AF7A /* TabViewController.swift */; };
 		053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E57252C1D4100C3432F /* AppDelegate.swift */; };
 		053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E59252C1D4100C3432F /* SceneDelegate.swift */; };
-		053D5E5C252C1D4100C3432F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E5B252C1D4100C3432F /* ViewController.swift */; };
 		053D5E5F252C1D4100C3432F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053D5E5D252C1D4100C3432F /* Main.storyboard */; };
 		053D5E61252C1D4300C3432F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053D5E60252C1D4300C3432F /* Assets.xcassets */; };
 		053D5E64252C1D4300C3432F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053D5E62252C1D4300C3432F /* LaunchScreen.storyboard */; };
-		053D5E6D252C1D7E00C3432F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E6C252C1D7E00C3432F /* SignUpViewController.swift */; };
-		053D5E70252C1D9000C3432F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D5E6F252C1D9000C3432F /* LoginViewController.swift */; };
 		055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EEBFB252C275A0031B4F1 /* Utilities.swift */; };
 		055EEC01252C2DE70031B4F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 055EEC00252C2DE70031B4F1 /* GoogleService-Info.plist */; };
 		055EEC28252D92660031B4F1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055EEC27252D92660031B4F1 /* Constants.swift */; };
@@ -44,8 +41,6 @@
 		057FFD8D25468A9400C1DB2F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057FFD8C25468A9400C1DB2F /* CoreData.framework */; };
 		057FFD9A25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9825468C0300C1DB2F /* WatchCore.xcdatamodeld */; };
 		057FFD9B25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9825468C0300C1DB2F /* WatchCore.xcdatamodeld */; };
-		057FFDA125468EA500C1DB2F /* AerabyteCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9F25468EA500C1DB2F /* AerabyteCore.xcdatamodeld */; };
-		057FFDA225468EA500C1DB2F /* AerabyteCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9F25468EA500C1DB2F /* AerabyteCore.xcdatamodeld */; };
 		057FFDA725468F1D00C1DB2F /* HitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FFDA625468F1D00C1DB2F /* HitListViewController.swift */; };
 		05C50941254039A10069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50940254039A10069E1AE /* Assets.xcassets */; };
 		05C50948254039A10069E1AE /* AerabyteFitnessWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05C50947254039A10069E1AE /* AerabyteFitnessWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -124,13 +119,10 @@
 		053D5E54252C1D4100C3432F /* AerabyteFitnessTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053D5E57252C1D4100C3432F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053D5E59252C1D4100C3432F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		053D5E5B252C1D4100C3432F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		053D5E5E252C1D4100C3432F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		053D5E60252C1D4300C3432F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053D5E63252C1D4300C3432F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		053D5E65252C1D4300C3432F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		053D5E6C252C1D7E00C3432F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		053D5E6F252C1D9000C3432F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		055EEBFB252C275A0031B4F1 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		055EEC00252C2DE70031B4F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		055EEC27252D92660031B4F1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -140,7 +132,6 @@
 		057FFD8A25468A8B00C1DB2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		057FFD8C25468A9400C1DB2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		057FFD9925468C0300C1DB2F /* WatchCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchCore.xcdatamodel; sourceTree = "<group>"; };
-		057FFDA025468EA500C1DB2F /* AerabyteCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AerabyteCore.xcdatamodel; sourceTree = "<group>"; };
 		057FFDA625468F1D00C1DB2F /* HitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitListViewController.swift; sourceTree = "<group>"; };
 		05BD3533252EFBC400E37F42 /* AerabyteFitnessTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerabyteFitnessTracker.entitlements; sourceTree = "<group>"; };
 		05C5093E2540399F0069E1AE /* AerabyteFitnessWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,9 +241,6 @@
 		053D5E75252C1DAE00C3432F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				053D5E6C252C1D7E00C3432F /* SignUpViewController.swift */,
-				053D5E6F252C1D9000C3432F /* LoginViewController.swift */,
-				053D5E5B252C1D4100C3432F /* ViewController.swift */,
 				05C509B92540F84A0069E1AE /* MenuViewController.swift */,
 				0520D9042542AE510066AF7A /* MasterViewController.swift */,
 				0520D9062542AE510066AF7A /* ProfileViewController.swift */,
@@ -314,7 +302,6 @@
 		05C5098125403F6B0069E1AE /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				057FFD9F25468EA500C1DB2F /* AerabyteCore.xcdatamodeld */,
 				0520D8E42542ADE60066AF7A /* Data Stores */,
 				0520D8EC2542ADFE0066AF7A /* HealthKitExtentions */,
 				0520D8F42542AE200066AF7A /* Models */,
@@ -533,15 +520,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				053D5E5C252C1D4100C3432F /* ViewController.swift in Sources */,
 				0520D8E72542ADF60066AF7A /* ProfileDataStore.swift in Sources */,
 				0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */,
 				053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */,
 				0520DB7B254408380066AF7A /* TabViewController.swift in Sources */,
 				055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */,
 				057FFDA725468F1D00C1DB2F /* HitListViewController.swift in Sources */,
-				053D5E6D252C1D7E00C3432F /* SignUpViewController.swift in Sources */,
-				053D5E70252C1D9000C3432F /* LoginViewController.swift in Sources */,
 				05C509BA2540F84A0069E1AE /* MenuViewController.swift in Sources */,
 				053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */,
 				05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */,
@@ -549,7 +533,6 @@
 				0520D8F02542AE150066AF7A /* HKBloodType+StringRepresentation.swift in Sources */,
 				0520D8EF2542AE150066AF7A /* HKBiologicalSex+StringRepresentation.swift in Sources */,
 				0520D9082542AE520066AF7A /* MasterViewController.swift in Sources */,
-				057FFDA125468EA500C1DB2F /* AerabyteCore.xcdatamodeld in Sources */,
 				055EEC28252D92660031B4F1 /* Constants.swift in Sources */,
 				057FFD9A25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */,
 				0520D8F92542AE2C0066AF7A /* UserHealthProfile.swift in Sources */,
@@ -573,7 +556,6 @@
 				05C509C02541190E0069E1AE /* HealthKitManager.swift in Sources */,
 				0520DB542543DF130066AF7A /* StartView.swift in Sources */,
 				057FFD9B25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */,
-				057FFDA225468EA500C1DB2F /* AerabyteCore.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -927,17 +909,6 @@
 			);
 			currentVersion = 057FFD9925468C0300C1DB2F /* WatchCore.xcdatamodel */;
 			path = WatchCore.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		057FFD9F25468EA500C1DB2F /* AerabyteCore.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				057FFDA025468EA500C1DB2F /* AerabyteCore.xcdatamodel */,
-			);
-			currentVersion = 057FFDA025468EA500C1DB2F /* AerabyteCore.xcdatamodel */;
-			name = AerabyteCore.xcdatamodeld;
-			path = ../AerabyteFitnessTracker/AerabyteCore.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
