@@ -71,7 +71,7 @@ class WorkoutManager: NSObject, ObservableObject {
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+        Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
             self.aerabytes = self.aerabyteTotal() + self.aerabytes
             }
         cancellable = Timer.publish(every: 0.1, on: .main, in: .default)
@@ -236,7 +236,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
     //adds aerabyte score to workoutSession method
     func pushScore() -> Int {
-        let aerabyteData = (self.aerabytes)/60
+        let aerabyteData = (self.aerabytes)/12
         return Int(aerabyteData)
     }
     

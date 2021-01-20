@@ -99,7 +99,7 @@ extension WorkoutsTableViewController {
             let query = HKSampleQuery(sampleType:heartRateType, predicate: predicate, limit: 600, sortDescriptors:[sortByTime], resultsHandler:{(query, results, error) in
                 guard let results = results else { return }
                 var runningSum = 0.0
-                
+                var aerabyteAccumulated = 0
                 for quantitySample in results {
                     
                     let quantity = (quantitySample as! HKQuantitySample).quantity
@@ -108,12 +108,55 @@ extension WorkoutsTableViewController {
                     csvString += "\(timeFormatter.string(from: quantitySample.startDate)),\(dateFormatter.string(from: quantitySample.startDate)),\(quantity.doubleValue(for: heartRateUnit))\n"
                     print("\(timeFormatter.string(from: quantitySample.startDate)),\(dateFormatter.string(from: quantitySample.startDate)),\(quantity.doubleValue(for: heartRateUnit))")
                     runningSum += quantity.doubleValue(for: heartRateUnit)
+                    func aerabyteCalc (heartRate: Double) -> Int {
+                        
+                        let maxHR: Double = 220
+                        let realmaxHR = maxHR - 20 // Double(userHealthProfile.age ?? 20)
+                        
+                        var aerabyteCount = 0
+                        if heartRate < realmaxHR * 0.5 {
+                           aerabyteCount += 1
+                       }
+                       else if heartRate >= realmaxHR*0.5 && heartRate < realmaxHR*0.55 {
+                           aerabyteCount +=  2
+                       }
+                       else if heartRate >= realmaxHR*0.55 && heartRate < realmaxHR*0.6 {
+                           aerabyteCount +=  3
+                       }
+                       else if heartRate >= realmaxHR*0.6 && heartRate < realmaxHR*0.65 {
+                           aerabyteCount +=  4
+                       }
+                       else if heartRate >= realmaxHR*0.65 && heartRate < realmaxHR*0.7 {
+                           aerabyteCount +=  5
+                       }
+                       else if heartRate >= realmaxHR*0.7 && heartRate < realmaxHR*0.75 {
+                           aerabyteCount += 6
+                       }
+                       else if heartRate >= realmaxHR*0.75 && heartRate < realmaxHR*0.8 {
+                           aerabyteCount +=  7
+                       }
+                       else if heartRate >= realmaxHR*0.8 && heartRate < realmaxHR*0.85 {
+                           aerabyteCount +=  8
+                       }
+                       else if heartRate >= realmaxHR*0.85 && heartRate < realmaxHR*0.9 {
+                           aerabyteCount +=  9
+                       }
+                       else if heartRate >= realmaxHR*0.9 {
+                           aerabyteCount +=  10
+                       }
+                           return Int(aerabyteCount)
+                   }
+                    let roundedValue = quantity.doubleValue(for: heartRateUnit)
+                    let aerabyteScore: Int = Int((aerabyteCalc(heartRate: roundedValue)))
+                    aerabyteAccumulated += aerabyteScore
+                    print("Aerabyte Score: ", aerabyteAccumulated)
+
                 }
                 
                 if results.count != 0 {
                     print("running Sum: ", (Int(runningSum) / results.count))
                     DispatchQueue.main.async {
-                        cell.detailTextLabel?.text = ("Aerabyte: " + (String(Int(runningSum) / results.count)))
+                        cell.detailTextLabel?.text = ("Avg Heart Rate: " + (String(Int(runningSum) / results.count)) + " Aerabyte Score: " + (String(aerabyteAccumulated / 12)))
                     }
                 }
                 else {
