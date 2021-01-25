@@ -8,7 +8,6 @@ This file contains the business logic, which is the interface to HealthKit.
 import Foundation
 import HealthKit
 import Combine
-import CoreData
 
 class WorkoutManager: NSObject, ObservableObject {
     
@@ -18,10 +17,6 @@ class WorkoutManager: NSObject, ObservableObject {
     /// - Tag: DeclareSessionBuilder
     var session: HKWorkoutSession!
     var builder: HKLiveWorkoutBuilder!
-    var people: [NSManagedObject] = []
-
- 
-    
     
     // Publish the following:
     // - heartrate
@@ -37,7 +32,6 @@ class WorkoutManager: NSObject, ObservableObject {
     @Published var elapsedSeconds: Int = 0
     @Published var aerabytes: Int = 0
     
-    
     // The app's workout state.
     var running: Bool = false
     
@@ -51,9 +45,6 @@ class WorkoutManager: NSObject, ObservableObject {
     
     private let userHealthProfile = UserHealthProfile()
     
-  
-    
-    
     private func loadAndDisplayAgeSexAndBloodType() {
       do {
         let userAgeSexAndBloodType = try ProfileDataStore.getAgeSexAndBloodType()
@@ -61,13 +52,10 @@ class WorkoutManager: NSObject, ObservableObject {
         userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
         userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
       } catch let error {
-        //
+        print(error)
       }
     }
-    
-    
-    
-    
+
     // Set up and start the timer.
     func setUpTimer() {
         start = Date()

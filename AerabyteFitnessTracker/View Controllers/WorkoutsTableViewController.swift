@@ -43,8 +43,7 @@ class WorkoutsTableViewController: UITableViewController {
     
   }
     
-    }
-
+}
 
 extension WorkoutsTableViewController {
   override func tableView(_ tableView: UITableView,
@@ -69,25 +68,12 @@ extension WorkoutsTableViewController {
     let workout = workouts[indexPath.row]
     
     //3. Show the workout's start date in the label
-    cell.textLabel?.text = dateFormatter.string(from: workout.startDate)
- 
-    //4. Show the Calorie burn in the lower label
-//    if let caloriesBurned =
-//        workout.totalEnergyBurned?.doubleValue(for: .kilocalorie()) {
-//      let formattedCalories = String(format: "CaloriesBurned: %.2f",
-//                                     caloriesBurned)
-//
-//      cell.detailTextLabel?.text = formattedCalories
-//    }
-//    else {
-//      cell.detailTextLabel?.text = nil
-//    }
-    print("Hello")
-    let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
-     
+    cell.detailTextLabel?.text = dateFormatter.string(from: workout.startDate)
     
-        var csvString = "Time,Date,Heartrate(BPM)\n"
-        healthKitManager.healthStore.requestAuthorization(toShare: nil, read:[heartRateType], completion:{(success, error) in
+    //4.
+    let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
+    var csvString = "Time,Date,Heartrate(BPM)\n"
+    healthKitManager.healthStore.requestAuthorization(toShare: nil, read:[heartRateType], completion: {(success, error) in
             let sortByTime = NSSortDescriptor(key:HKSampleSortIdentifierEndDate, ascending:false)
             let timeFormatter = DateFormatter()
             timeFormatter.dateFormat = "hh:mm:ss"
@@ -156,13 +142,12 @@ extension WorkoutsTableViewController {
                 if results.count != 0 {
                     print("running Sum: ", (Int(runningSum) / results.count))
                     DispatchQueue.main.async {
-                        cell.detailTextLabel?.text = ("Avg Heart Rate: " + (String(Int(runningSum) / results.count)) + " Aerabyte Score: " + (String(aerabyteAccumulated / 12)))
+                        cell.textLabel?.text = ("Aerabyte Score: " + (String(aerabyteAccumulated / 12)) + "\nHeartrate: " + (String(Int(runningSum) / results.count)))
                     }
                 }
                 else {
                     print("0")
                 }
-                
               
         })
             self.healthKitManager.healthStore.execute(query)

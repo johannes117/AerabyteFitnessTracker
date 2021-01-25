@@ -51,7 +51,7 @@
 		05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
 		05C509C02541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
 		5F6C4266252EE9CC00C35FE1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */; };
-		80F0F479D43BA180D46FCAAE /* Pods_AerabyteFitnessTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF44E4904DC2A985760C0EF5 /* Pods_AerabyteFitnessTracker.framework */; };
+		E00717A13C241BA96D6B026A /* libPods-AerabyteFitnessTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B07D81BE45BDF87AB5A7EA16 /* libPods-AerabyteFitnessTracker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,8 +145,8 @@
 		05C509BE2541190E0069E1AE /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
 		05E0321CF04F18DEC67D6238 /* Pods-AerabyteFitnessTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerabyteFitnessTracker.release.xcconfig"; path = "Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker.release.xcconfig"; sourceTree = "<group>"; };
 		5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		B07D81BE45BDF87AB5A7EA16 /* libPods-AerabyteFitnessTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AerabyteFitnessTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9860C4A316E3296BB1D79D6 /* Pods-AerabyteFitnessTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerabyteFitnessTracker.debug.xcconfig"; path = "Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		BF44E4904DC2A985760C0EF5 /* Pods_AerabyteFitnessTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AerabyteFitnessTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +156,8 @@
 			files = (
 				057FFD8725468A1B00C1DB2F /* CloudKit.framework in Frameworks */,
 				057FFD8D25468A9400C1DB2F /* CoreData.framework in Frameworks */,
-				80F0F479D43BA180D46FCAAE /* Pods_AerabyteFitnessTracker.framework in Frameworks */,
 				5F6C4266252EE9CC00C35FE1 /* HealthKit.framework in Frameworks */,
+				E00717A13C241BA96D6B026A /* libPods-AerabyteFitnessTracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +168,13 @@
 				0520DB622543DF790066AF7A /* HealthKit.framework in Frameworks */,
 				057FFD8B25468A8B00C1DB2F /* CoreData.framework in Frameworks */,
 				057FFD8925468A2800C1DB2F /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CBADE9CF6E0D7F331CD9AB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +344,7 @@
 				057FFD8625468A1B00C1DB2F /* CloudKit.framework */,
 				0520DB612543DF790066AF7A /* HealthKit.framework */,
 				5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */,
-				BF44E4904DC2A985760C0EF5 /* Pods_AerabyteFitnessTracker.framework */,
+				B07D81BE45BDF87AB5A7EA16 /* libPods-AerabyteFitnessTracker.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -353,7 +360,6 @@
 				053D5E50252C1D4100C3432F /* Sources */,
 				053D5E51252C1D4100C3432F /* Frameworks */,
 				053D5E52252C1D4100C3432F /* Resources */,
-				E22921D92B820B6B7D0450B9 /* [CP] Embed Pods Frameworks */,
 				05C5095B254039A20069E1AE /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -372,6 +378,7 @@
 			buildPhases = (
 				05C5093C2540399F0069E1AE /* Resources */,
 				05C5095E254039A20069E1AE /* Embed App Extensions */,
+				3CBADE9CF6E0D7F331CD9AB0 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -494,23 +501,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E22921D92B820B6B7D0450B9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
