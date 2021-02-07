@@ -224,7 +224,7 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
     }
     //adds aerabyte score to workoutSession method
     func pushScore() -> Int {
-        let aerabyteData = (self.aerabytes)/12
+        let aerabyteData = (self.aerabytes) / 12
         return Int(aerabyteData)
     }
     
@@ -234,34 +234,34 @@ extension WorkoutManager: HKWorkoutSessionDelegate {
         let realmaxHR = maxHR - Double(userHealthProfile.age ?? 20)
         
     var aerabyteCount = accumulatedAerabytes
-        if heartRate < realmaxHR*0.5 {
+        if heartRate < realmaxHR * 0.5 {
            aerabyteCount += 1
        }
-       else if heartRate >= realmaxHR*0.5 && heartRate < realmaxHR*0.55 {
+       else if heartRate >= realmaxHR * 0.5 && heartRate < realmaxHR*0.55 {
            aerabyteCount +=  2
        }
-       else if heartRate >= realmaxHR*0.55 && heartRate < realmaxHR*0.6 {
+       else if heartRate >= realmaxHR * 0.55 && heartRate < realmaxHR*0.6 {
            aerabyteCount +=  3
        }
-       else if heartRate >= realmaxHR*0.6 && heartRate < realmaxHR*0.65 {
+       else if heartRate >= realmaxHR * 0.6 && heartRate < realmaxHR*0.65 {
            aerabyteCount +=  4
        }
-       else if heartRate >= realmaxHR*0.65 && heartRate < realmaxHR*0.7 {
+       else if heartRate >= realmaxHR * 0.65 && heartRate < realmaxHR*0.7 {
            aerabyteCount +=  5
        }
-       else if heartRate >= realmaxHR*0.7 && heartRate < realmaxHR*0.75 {
+       else if heartRate >= realmaxHR * 0.7 && heartRate < realmaxHR*0.75 {
            aerabyteCount += 6
        }
-       else if heartRate >= realmaxHR*0.75 && heartRate < realmaxHR*0.8 {
+       else if heartRate >= realmaxHR * 0.75 && heartRate < realmaxHR*0.8 {
            aerabyteCount +=  7
        }
-       else if heartRate >= realmaxHR*0.8 && heartRate < realmaxHR*0.85 {
+       else if heartRate >= realmaxHR * 0.8 && heartRate < realmaxHR*0.85 {
            aerabyteCount +=  8
        }
-       else if heartRate >= realmaxHR*0.85 && heartRate < realmaxHR*0.9 {
+       else if heartRate >= realmaxHR * 0.85 && heartRate < realmaxHR*0.9 {
            aerabyteCount +=  9
        }
-       else if heartRate >= realmaxHR*0.9 {
+       else if heartRate >= realmaxHR * 0.9 {
            aerabyteCount +=  10
        }
            return Int(aerabyteCount)

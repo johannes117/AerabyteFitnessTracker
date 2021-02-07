@@ -35,43 +35,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QdI-Q2-jz6">
-                                <rect key="frame" x="40" y="723" width="334" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="sNZ-Ss-HNk"/>
-                                </constraints>
-                                <state key="normal" title="Launch Watch App"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Aerabyte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-Z5-PxZ">
-                                <rect key="frame" x="40" y="84" width="334" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="aze-OB-yOj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture 1" translatesAutoresizingMaskIntoConstraints="NO" id="Uxp-LD-OO8">
+                                <rect key="frame" x="20" y="0.0" width="374" height="175"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Aerabytes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNa-wq-jRB">
+                                <rect key="frame" x="20" y="310" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-Iu-iCQ">
+                                <rect key="frame" x="20" y="256" width="374" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtn-PW-wlN">
+                                <rect key="frame" x="20" y="371" width="374" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Aerabytes:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zoP-gt-jMu">
+                                <rect key="frame" x="20" y="195" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bMS-9n-2Ir"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
-                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="bottom" secondItem="QdI-Q2-jz6" secondAttribute="bottom" constant="40" id="7ID-Tm-oFd"/>
-                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="gjR-Z5-PxZ" secondAttribute="trailing" constant="40" id="Mry-2y-33r"/>
-                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="QdI-Q2-jz6" secondAttribute="trailing" constant="40" id="Mxj-26-umt"/>
-                            <constraint firstItem="QdI-Q2-jz6" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="40" id="RIA-69-9MS"/>
-                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="40" id="RjF-lC-ouW"/>
-                            <constraint firstItem="gjR-Z5-PxZ" firstAttribute="top" secondItem="bMS-9n-2Ir" secondAttribute="top" constant="40" id="xsY-fc-jNH"/>
+                            <constraint firstItem="vtn-PW-wlN" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="20" id="6r4-R4-bar"/>
+                            <constraint firstItem="6b8-Iu-iCQ" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="20" id="8Ys-vk-Fj6"/>
+                            <constraint firstAttribute="trailing" secondItem="Uxp-LD-OO8" secondAttribute="trailing" constant="20" id="AGZ-qt-sVi"/>
+                            <constraint firstItem="lNa-wq-jRB" firstAttribute="top" secondItem="6b8-Iu-iCQ" secondAttribute="bottom" constant="20" id="Mlr-z1-sYZ"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="vtn-PW-wlN" secondAttribute="trailing" constant="20" id="OO0-1g-5uh"/>
+                            <constraint firstItem="6b8-Iu-iCQ" firstAttribute="top" secondItem="zoP-gt-jMu" secondAttribute="bottom" constant="20" id="Q76-AW-fKP"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="lNa-wq-jRB" secondAttribute="trailing" constant="20" id="QVx-3v-F9P"/>
+                            <constraint firstItem="vtn-PW-wlN" firstAttribute="top" secondItem="lNa-wq-jRB" secondAttribute="bottom" constant="20" id="VuZ-8R-eCd"/>
+                            <constraint firstItem="zoP-gt-jMu" firstAttribute="top" secondItem="Uxp-LD-OO8" secondAttribute="bottom" constant="20" id="Zbe-65-OD9"/>
+                            <constraint firstItem="Uxp-LD-OO8" firstAttribute="leading" secondItem="pcA-2y-ZVc" secondAttribute="leading" constant="20" id="b9t-Ao-VD7"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="6b8-Iu-iCQ" secondAttribute="trailing" constant="20" id="jZt-eG-Swh"/>
+                            <constraint firstItem="bMS-9n-2Ir" firstAttribute="trailing" secondItem="zoP-gt-jMu" secondAttribute="trailing" constant="20" id="kHp-XY-vO5"/>
+                            <constraint firstItem="lNa-wq-jRB" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="20" id="qD8-69-SmT"/>
+                            <constraint firstItem="Uxp-LD-OO8" firstAttribute="top" secondItem="pcA-2y-ZVc" secondAttribute="top" id="u0F-qM-Bdd"/>
+                            <constraint firstItem="zoP-gt-jMu" firstAttribute="leading" secondItem="bMS-9n-2Ir" secondAttribute="leading" constant="20" id="zEI-9O-MsS"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="JWE-yH-PoI"/>
                     <navigationItem key="navigationItem" id="b3b-J2-Pvg"/>
                     <connections>
-                        <outlet property="startWorkoutButton" destination="QdI-Q2-jz6" id="V04-h1-AmF"/>
+                        <outlet property="dailyTotal" destination="vtn-PW-wlN" id="GZK-Di-P5b"/>
+                        <outlet property="weeklyTotal" destination="6b8-Iu-iCQ" id="leU-96-3Rv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2f2-Ds-bJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4367" y="-125"/>
+            <point key="canvasLocation" x="4366.666666666667" y="-125.22321428571428"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="41k-g9-WbH">
@@ -89,11 +110,11 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AerabyteWorkoutCell" textLabel="sww-eT-34T" detailTextLabel="5uX-bh-Nzq" imageView="0wL-1j-lCm" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="9Ct-mS-LsI">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AerabyteWorkoutCell" textLabel="sww-eT-34T" detailTextLabel="5uX-bh-Nzq" imageView="0wL-1j-lCm" rowHeight="80" style="IBUITableViewCellStyleSubtitle" id="9Ct-mS-LsI">
                                 <rect key="frame" x="0.0" y="72" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="9Ct-mS-LsI" id="TCD-rr-SAS">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sww-eT-34T">
@@ -118,6 +139,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="tintColor" systemColor="systemRedColor"/>
+                                <connections>
+                                    <segue destination="qEi-Mq-S1K" kind="show" id="qYZ-r6-MDg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,8 +158,68 @@
             </objects>
             <point key="canvasLocation" x="4367" y="536"/>
         </scene>
+        <!--SummaryViewController-->
+        <scene sceneID="Ifq-n4-83a">
+            <objects>
+                <tableViewController storyboardIdentifier="SummaryViewController" title="SummaryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qEi-Mq-S1K" customClass="SummaryViewController" customModule="AerabyteFitnessTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Tz-bd-57R">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zF1-Lf-96v">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SummaryCell" textLabel="1hT-ii-AK1" detailTextLabel="A5v-1t-vxd" imageView="BZo-0d-gac" rowHeight="80" style="IBUITableViewCellStyleValue1" id="y4l-vo-XBP">
+                                <rect key="frame" x="0.0" y="72" width="414" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="y4l-vo-XBP" id="ZXU-dr-nyx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1hT-ii-AK1">
+                                            <rect key="frame" x="59.5" y="30" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BZo-0d-gac">
+                                            <rect key="frame" x="19.5" y="28" width="25" height="24"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <imageReference key="image" image="circle" catalog="system" symbolScale="large"/>
+                                        </imageView>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="A5v-1t-vxd">
+                                            <rect key="frame" x="350" y="30" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qEi-Mq-S1K" id="yId-53-Loz"/>
+                            <outlet property="delegate" destination="qEi-Mq-S1K" id="jSL-HT-nbx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BQm-Eb-FhT"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERr-rr-fYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5187" y="536"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Picture 1" width="783" height="175"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
         <image name="flame.fill" catalog="system" width="108" height="128"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
@@ -144,6 +228,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

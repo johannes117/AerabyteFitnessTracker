@@ -27,7 +27,7 @@ struct RunButton: View {
     
     var body: some View {
         Button(action: { self.action() }) {
-            Text("RUN")
+            Text("GO!")
         }
         .buttonStyle(RunStyle())
     }

@@ -4,10 +4,10 @@ import UIKit
 import HealthKit
 
 class WorkoutsTableViewController: UITableViewController {
-    
+   
     let healthKitManager = HealthKitManager.sharedInstance;
     let profileDataStore = ProfileDataStore.sharedInstance;
-
+    private let userHealthProfile = UserHealthProfile()
 
   private enum WorkoutsSegues: String {
     case showCreateWorkout
@@ -60,6 +60,7 @@ extension WorkoutsTableViewController {
                """)
     }
     
+    
     //1. Get a cell to display the workout in
     let cell = tableView.dequeueReusableCell(withIdentifier:
       aerabyteWorkoutCellID, for: indexPath)
@@ -69,7 +70,6 @@ extension WorkoutsTableViewController {
     
     //3. Show the workout's start date in the label
     cell.detailTextLabel?.text = dateFormatter.string(from: workout.startDate)
-    
     //4.
     let heartRateType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.heartRate)!
     var csvString = "Time,Date,Heartrate(BPM)\n"
@@ -82,7 +82,7 @@ extension WorkoutsTableViewController {
             dateFormatter.dateFormat = "MM/dd/YYYY"
             let predicate = HKQuery.predicateForSamples(withStart: workout.startDate, end: workout.endDate, options: HKQueryOptions())
             
-            let query = HKSampleQuery(sampleType:heartRateType, predicate: predicate, limit: 600, sortDescriptors:[sortByTime], resultsHandler:{(query, results, error) in
+            let query = HKSampleQuery(sampleType:heartRateType, predicate: predicate, limit: 8640, sortDescriptors:[sortByTime], resultsHandler:{(query, results, error) in
                 guard let results = results else { return }
                 var runningSum = 0.0
                 var aerabyteAccumulated = 0
@@ -97,7 +97,7 @@ extension WorkoutsTableViewController {
                     func aerabyteCalc (heartRate: Double) -> Int {
                         
                         let maxHR: Double = 220
-                        let realmaxHR = maxHR - 20 // Double(userHealthProfile.age ?? 20)
+                        let realmaxHR = maxHR - Double(self.userHealthProfile.age ?? 20)
                         
                         var aerabyteCount = 0
                         if heartRate < realmaxHR * 0.5 {
@@ -135,14 +135,14 @@ extension WorkoutsTableViewController {
                     let roundedValue = quantity.doubleValue(for: heartRateUnit)
                     let aerabyteScore: Int = Int((aerabyteCalc(heartRate: roundedValue)))
                     aerabyteAccumulated += aerabyteScore
-                    print("Aerabyte Score: ", aerabyteAccumulated)
+                    //print("Aerabyte Score: ", aerabyteAccumulated)
 
                 }
                 
                 if results.count != 0 {
-                    print("running Sum: ", (Int(runningSum) / results.count))
+                   // print("running Sum: ", (Int(runningSum) / results.count))
                     DispatchQueue.main.async {
-                        cell.textLabel?.text = ("Aerabyte Score: " + (String(aerabyteAccumulated / 12)) + "\nHeartrate: " + (String(Int(runningSum) / results.count)))
+                        cell.textLabel?.text = ("Aerabyte Score: " + (String(aerabyteAccumulated/12)) + "\nAverage Heartrate: " + (String(Int(runningSum) / results.count)))
                     }
                 }
                 else {
@@ -152,9 +152,20 @@ extension WorkoutsTableViewController {
         })
             self.healthKitManager.healthStore.execute(query)
         })
+    func pullWorkout(){
+    let selectedWorkout = workouts[indexPath.row]
     
+    if let viewController = storyboard?.instantiateViewController(identifier: "SummaryViewController") as? SummaryViewController {
+        viewController.workouts = selectedWorkout;
+        viewController.aerabyteScore = 24
+        
+        navigationController?.show(viewController, sender: true)
+    }
+    }
     return cell
+    
   }
+    
     
 }
 

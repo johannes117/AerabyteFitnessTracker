@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		0520D8F92542AE2C0066AF7A /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */; };
 		0520D9082542AE520066AF7A /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9042542AE510066AF7A /* MasterViewController.swift */; };
 		0520D9092542AE520066AF7A /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */; };
-		0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520D9062542AE510066AF7A /* ProfileViewController.swift */; };
 		0520DB542543DF130066AF7A /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4B2543DF130066AF7A /* StartView.swift */; };
 		0520DB552543DF130066AF7A /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4C2543DF130066AF7A /* PagingView.swift */; };
 		0520DB562543DF130066AF7A /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0520DB4D2543DF130066AF7A /* MenuView.swift */; };
@@ -41,7 +40,6 @@
 		057FFD8D25468A9400C1DB2F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057FFD8C25468A9400C1DB2F /* CoreData.framework */; };
 		057FFD9A25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9825468C0300C1DB2F /* WatchCore.xcdatamodeld */; };
 		057FFD9B25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 057FFD9825468C0300C1DB2F /* WatchCore.xcdatamodeld */; };
-		057FFDA725468F1D00C1DB2F /* HitListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FFDA625468F1D00C1DB2F /* HitListViewController.swift */; };
 		05C50941254039A10069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50940254039A10069E1AE /* Assets.xcassets */; };
 		05C50948254039A10069E1AE /* AerabyteFitnessWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05C50947254039A10069E1AE /* AerabyteFitnessWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05C50953254039A20069E1AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05C50952254039A20069E1AE /* Assets.xcassets */; };
@@ -50,6 +48,7 @@
 		05C509BA2540F84A0069E1AE /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509B92540F84A0069E1AE /* MenuViewController.swift */; };
 		05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
 		05C509C02541190E0069E1AE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C509BE2541190E0069E1AE /* HealthKitManager.swift */; };
+		05C8539925BF89BF00620639 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8539825BF89BF00620639 /* SummaryViewController.swift */; };
 		5F6C4266252EE9CC00C35FE1 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */; };
 		E00717A13C241BA96D6B026A /* libPods-AerabyteFitnessTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B07D81BE45BDF87AB5A7EA16 /* libPods-AerabyteFitnessTracker.a */; };
 /* End PBXBuildFile section */
@@ -103,7 +102,6 @@
 		0520D8F62542AE2C0066AF7A /* UserHealthProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
 		0520D9042542AE510066AF7A /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
-		0520D9062542AE510066AF7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0520DB4B2543DF130066AF7A /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		0520DB4C2543DF130066AF7A /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
 		0520DB4D2543DF130066AF7A /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 		057FFD8A25468A8B00C1DB2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS7.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		057FFD8C25468A9400C1DB2F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		057FFD9925468C0300C1DB2F /* WatchCore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchCore.xcdatamodel; sourceTree = "<group>"; };
-		057FFDA625468F1D00C1DB2F /* HitListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitListViewController.swift; sourceTree = "<group>"; };
 		05BD3533252EFBC400E37F42 /* AerabyteFitnessTracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AerabyteFitnessTracker.entitlements; sourceTree = "<group>"; };
 		05C5093E2540399F0069E1AE /* AerabyteFitnessWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AerabyteFitnessWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05C50940254039A10069E1AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,6 +140,7 @@
 		05C50957254039A20069E1AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C509B92540F84A0069E1AE /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		05C509BE2541190E0069E1AE /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		05C8539825BF89BF00620639 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		05E0321CF04F18DEC67D6238 /* Pods-AerabyteFitnessTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AerabyteFitnessTracker.release.xcconfig"; path = "Target Support Files/Pods-AerabyteFitnessTracker/Pods-AerabyteFitnessTracker.release.xcconfig"; sourceTree = "<group>"; };
 		5F6C4265252EE9CC00C35FE1 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		B07D81BE45BDF87AB5A7EA16 /* libPods-AerabyteFitnessTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AerabyteFitnessTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,10 +248,9 @@
 			children = (
 				05C509B92540F84A0069E1AE /* MenuViewController.swift */,
 				0520D9042542AE510066AF7A /* MasterViewController.swift */,
-				0520D9062542AE510066AF7A /* ProfileViewController.swift */,
 				0520D9052542AE510066AF7A /* WorkoutsTableViewController.swift */,
 				0520DB7A254408380066AF7A /* TabViewController.swift */,
-				057FFDA625468F1D00C1DB2F /* HitListViewController.swift */,
+				05C8539825BF89BF00620639 /* SummaryViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -511,11 +508,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0520D8E72542ADF60066AF7A /* ProfileDataStore.swift in Sources */,
-				0520D90A2542AE520066AF7A /* ProfileViewController.swift in Sources */,
 				053D5E58252C1D4100C3432F /* AppDelegate.swift in Sources */,
 				0520DB7B254408380066AF7A /* TabViewController.swift in Sources */,
 				055EEBFC252C275A0031B4F1 /* Utilities.swift in Sources */,
-				057FFDA725468F1D00C1DB2F /* HitListViewController.swift in Sources */,
 				05C509BA2540F84A0069E1AE /* MenuViewController.swift in Sources */,
 				053D5E5A252C1D4100C3432F /* SceneDelegate.swift in Sources */,
 				05C509BF2541190E0069E1AE /* HealthKitManager.swift in Sources */,
@@ -526,6 +521,7 @@
 				055EEC28252D92660031B4F1 /* Constants.swift in Sources */,
 				057FFD9A25468C0300C1DB2F /* WatchCore.xcdatamodeld in Sources */,
 				0520D8F92542AE2C0066AF7A /* UserHealthProfile.swift in Sources */,
+				05C8539925BF89BF00620639 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

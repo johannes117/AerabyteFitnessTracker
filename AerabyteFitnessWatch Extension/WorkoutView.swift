@@ -9,6 +9,21 @@ import SwiftUI
 
 struct WorkoutView: View {
     @EnvironmentObject var workoutSession: WorkoutManager
+    let profileDataStore = ProfileDataStore.sharedInstance
+    
+    private let userHealthProfile = UserHealthProfile()
+    
+    private func loadAndDisplayAgeSexAndBloodType() {
+      do {
+        let userAgeSexAndBloodType = try ProfileDataStore.getAgeSexAndBloodType()
+        userHealthProfile.age = userAgeSexAndBloodType.age
+        userHealthProfile.biologicalSex = userAgeSexAndBloodType.biologicalSex
+        userHealthProfile.bloodType = userAgeSexAndBloodType.bloodType
+      } catch let error {
+        print(error)
+      }
+    }
+    
    
     var body: some View {
         VStack(alignment: .leading) {
@@ -28,8 +43,11 @@ struct WorkoutView: View {
             Text("\(workoutSession.heartrate, specifier: "%.1f") ❤")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             
-            // The distance traveled.
-            Text("\(workoutSession.distance, specifier: "%.1f") m")
+            let maxHR: Double = 220
+            let realmaxHR = maxHR - Double(userHealthProfile.age ?? 20)
+            
+            // percentage of Current heartrate
+            Text("\((workoutSession.heartrate / realmaxHR) * 100 , specifier: "%.1f") %")
             .font(Font.system(size: 26, weight: .regular, design: .default).monospacedDigit())
             Spacer().frame(width: 1, height: 8, alignment: .leading)
              
